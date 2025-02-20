@@ -1,8 +1,8 @@
 ---
-title: Game Project 2
-date: 2025-01-20 00:00:00 +01:00
-modified: 2025-02-14 00:00:00 +01:00
-tags: [GP2, Game Project, Aurelia, The Last Flame]
+title: Custom Unity Packages
+date: 2025-02-17 00:00:00 +01:00
+modified: 2025-02-17 00:00:00 +01:00
+tags: [Unity Packages, Unity, UI, Behaviour Trees]
 description: A journal entry detailing my experience in game project 2
 ---
 
