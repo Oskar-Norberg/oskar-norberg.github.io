@@ -11,9 +11,7 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Oskar Norberg # author name
   bio: >- # tell to the world
-    Aspiring game programmer.
-    <br>
-    My name is Oskar Norberg and I am an aspiring game programmer with a passion in AI Behaviours and systems programming.
+    Aspiring game programmer with a passion in AI Behaviours and systems programming.
     <br>
     Find my work at <a href="https://github.com/Oskar-Norberg" target="_blank" rel="noopener">@github</a> and <a href="https://oskar-norberg.itch.io/" target="_blank" rel="noopener">@itch.io</a>.
   github: Oskar-Norberg # github username
