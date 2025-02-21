@@ -153,10 +153,25 @@ body[data-theme="dark"] {
     }
   }
 
+
+
+
+/*
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   // Post Item
   .post-item {
+    text-align: center;
+    height: 100%;
+    margin-top: 1rem;
+
     &:not(:first-child) {
-      border-color: $dark-light;
+      // Disgusting hack to disable border color
+      border-color: rgba(0,0,0,0);
     }
 
     .post-item-date {
@@ -204,6 +219,7 @@ body[data-theme="dark"] {
       }
     }
   }
+*/
 
   // Footer
   .footer {
@@ -234,7 +250,7 @@ body[data-theme="dark"] {
     .solution:hover {
       color: $dark-text-link-blue-active;
     }
-  }  
+  }
 
   .search-article {
     input[type="search"] {
