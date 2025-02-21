@@ -5,10 +5,10 @@ home: true
 
 <h3 class="posts-item-note" aria-label="Projects" style="text-align:center;">Projects</h3>
 
-<div class="posts-grid">
+<div class="custom-posts-grid">
   {%- for post in site.posts limit: site.number_of_posts -%}
-    <div class="post-item" style="background-image: url('{{ post.image }}');">
-      <div class="post-content">
+    <div class="custom-post-item" style="background-image: url('{{post.image}}');">
+      <div class="custom-post-content">
         <a href="{{ post.url }}">{{ post.title | escape }}</a>
       </div>
     </div>
