@@ -153,10 +153,63 @@ body[data-theme="dark"] {
     }
   }
 
+// Custom code for post grid
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .post-item {
+    border-color: rgba(0,0,0,0);
+
+    background-size: cover;
+    background-position: center;
+
+    height: 15rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    filter: brightness(80%);
+    transition: filter 0.4s ease;
+  }
+
+  .post-item:hover {
+    filter: brightness(100%);
+  }
+
+  .post-content {
+    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text visibility */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+
+
+
+
+/*
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   // Post Item
   .post-item {
+    text-align: center;
+    height: 100%;
+    margin-top: 1rem;
+
     &:not(:first-child) {
-      border-color: $dark-light;
+      // Disgusting hack to disable border color
+      border-color: rgba(0,0,0,0);
     }
 
     .post-item-date {
@@ -204,6 +257,7 @@ body[data-theme="dark"] {
       }
     }
   }
+*/
 
   // Footer
   .footer {

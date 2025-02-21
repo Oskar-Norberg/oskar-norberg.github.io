@@ -3,6 +3,7 @@ title: Custom Unity Packages
 date: 2025-02-17 00:00:00 +01:00
 tags: [Unity Packages, Unity, UI, Behaviour Trees]
 description: A journal entry detailing my experience in game project 2
+image: "img/header.jpg"
 ---
 
 Game Project 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [INSERT LINK HERE](https://futuregames.itch.io/lizardescape).
