@@ -1,11 +1,11 @@
 ---
-title: Game Project 2 - The Last Flame
-date: 2025-01-20 00:00:00 +01:00
-tags: [GP2, Game Project, Aurelia, The Last Flame, Unity]
-description: A journal entry detailing my experience in game project 2
+title: Vampire Survivors Clone
+date: 2024-09-02 00:00:00 +01:00
+tags: [Vampire Survivors, C#, Solo-Project, Unity]
+description: A journal entry detailing the development of my Vampire Survivors Clone
 ---
 
-Game Project 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [INSERT LINK HERE](https://futuregames.itch.io/lizardescape).
+Game Project 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [itch.io](https://futuregames.itch.io/lizardescape).
 
 <hr>
 

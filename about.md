@@ -1,12 +1,16 @@
 ---
-title: Colophon
+title: About
 permalink: /about/
 layout: page
-excerpt: Hello peeps, I'm student of computer science from Banyuwangi, living in Jogjakarta. This blog for documentation about my programming journey, running on jekyll, hosting on netlify and using my own simple theme.
+excerpt: About page.
 comments: false
 ---
 
-He's a student from Banyuwangi, living in Jogjakarta. the blog for documentation about his programming 🎒 journey, running on jekyll, hosting on [now.sh](http://now.sh) and using his own theme, he name it <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">klisé</a>, he also loves to learning web technology; but he often forgot, that a reason why him doing the writing.
+Futuregames alumni and game programmer from Stockholm, Sweden. My favorite topics include Behaviour Trees, AI Behaviours, Systems Architecture and gameplay programming.
+<br>
+I've studied programming since I was 15 and have used computers and played games for as long as I can remember. 
+
+<a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">klisé</a>
 
 If you have a question about him or else, just send a letter to him.
 
@@ -16,3 +20,7 @@ You can [report](http://github.com/piharpi/jekyll-klise/issues/new) if there is 
 
 - {{ site.author.email }}
 - github.com/{{ site.author.github }}
+
+**hobbies**
+<br>
+In my free time I enjoy photography and gaming.

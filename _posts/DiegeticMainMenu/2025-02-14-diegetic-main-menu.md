@@ -1,7 +1,6 @@
 ---
 title: Diegetic Main Menu
 date: 2025-02-14 00:00:00 +01:00
-modified: 2025-02-14 00:00:00 +01:00
 tags: [UI, Diegetic Main Menu, Unity]
 description: A journal entry detailing my experience in game project 2
 ---
