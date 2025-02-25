@@ -368,6 +368,12 @@ mark,
   }
 }
 
+// Custom code for video containers
+.video-container{
+  height:auto;
+  width: 100%;
+}
+
 // Custom code for post grid
   .custom-posts-grid {
     display: grid;
