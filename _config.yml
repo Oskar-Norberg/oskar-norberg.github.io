@@ -1,0 +1,9 @@
+title: Oskar Norberg
+description: Oskar Norberg Game/Systems-Programmer.
+baseurl: ""
+url: ""
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
