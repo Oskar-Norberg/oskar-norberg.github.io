@@ -14,11 +14,8 @@
     </head>
     <body>
         <script src="{{ '/assets/vendor/glide-js/glide.min.js' | relative_url }}"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                new Glide('.glide').mount();
-            });
-        </script>
+        <script src ="{{ 'assets/js/glider-setup.js' | relative_url}}"></script>
+            
 
         {% include header.html %}
 
