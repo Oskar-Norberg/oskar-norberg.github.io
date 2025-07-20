@@ -3,6 +3,14 @@ description: Game/Systems-Programmer.
 baseurl: ""
 url: ""
 
+# Socials
+github-username: Oskar-Norberg
+github-link: https://github.com/Oskar-Norberg
+
+linkedin-link: https://linkedin.com/in/oskar-norberg-6905b1310/
+
+email-address: oskar.norberg2004@outlook.com
+
 markdown: kramdown
 highlighter: rouge
 kramdown:
