@@ -22,8 +22,16 @@
     height: 25%;
 }
 
-.glide__arrow{
-    // TODO: Fix the arrows distance from glider
+.glide__arrow--left{
+    left: -5.5em;
+}
+
+.glide__arrow--right{
+    right: -5.5em;
+}
+
+.glide__bullets {
+    bottom: -1em;
 }
 
 .glide__bullet {
