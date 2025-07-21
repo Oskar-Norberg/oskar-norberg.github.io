@@ -1,9 +1,32 @@
 body{
     background-color: $color-blue;
 }
+
 *{
     color: $color-white;
     font-family: DM-Serif;
+}
+
+h1{
+    font-size: 8rem;
+}
+
+h2{
+    font-size: 5rem;
+}
+
+h3{
+    font-size: 4rem;
+}
+
+h4{
+    font-size: 3rem;
+}
+h5{
+    font-size: 2rem;
+}
+h6{
+    font-size: 1rem;
 }
 
 /*
