@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+        <div class="twelve columns flex-center">
+        {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+
+        </div>
+    </div>
+</div>
