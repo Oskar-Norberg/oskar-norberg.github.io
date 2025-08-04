@@ -1,0 +1,11 @@
+@each $name, $col in $colors {
+  .text-color-#{$name} {
+    color: $col !important;
+  }
+  .bg-color-#{$name} {
+    background-color: $col !important;
+  }
+  .border-color-#{$name} {
+    border-color: $col !important;
+  }
+}

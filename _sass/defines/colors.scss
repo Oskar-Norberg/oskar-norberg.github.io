@@ -10,3 +10,15 @@ $color-gray: #6b7886;
 $color-white: #f0f0f0;
 
 $color-red: #a32121;
+
+$colors: (
+  "lighter-blue": $color-lighter-blue,
+  "blue": $color-blue,
+  "darker-blue": $color-darker-blue,
+  "black": $color-black,
+  "light": $color-light,
+  "smoke": $color-smoke,
+  "gray": $color-gray,
+  "white": $color-white,
+  "red": $color-red
+);
