@@ -5,43 +5,34 @@ layout: default
 <div class="container">
     <h2 class="text-center">Selected works</h2>
     <div class="row">
+        {% assign featured_posts = site.posts | where: "featured", true %}
+
         <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-            <li class="glide__slide">
-                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                <h4>Some proper text</h4>
-            </li>
-            <li class="glide__slide">
-                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                <h4>In order to judge spacing</h4>
-            </li>
-            <li class="glide__slide">
-                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                <h4>Unity EventBus</h4>
-            </li>
-            <li class="glide__slide">
-                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                <h4>Unity SaveSystem</h4>
-            </li>
-            <li class="glide__slide">
-                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                <h4>Unity PlayerController/Character</h4>
-            </li>
-            </ul>
-        </div>
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    {% for post in featured_posts %}
+                        <li class="glide__slide">
+                            <a href="{{ post.url | relative_url }}" class="text-decoration-none">
+                                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
+                                <h4> {{ post.title }} </h4>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-        <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-        </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+            </div>
 
-        <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-            <button class="glide__bullet" data-glide-dir="=3"></button>
-            <button class="glide__bullet" data-glide-dir="=4"></button>
+            {% if featured_posts and featured_posts.size > 0 %}
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    {% for post in featured_posts %}
+                        <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
+                    {% endfor %}
+                    </div>
+            {% endif %}
         </div>
     </div>
 
@@ -54,30 +45,31 @@ layout: default
         {% assign posts = site.categories["game-projects"] %}
 
         <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                {% for post in posts %}
-                    <li class="glide__slide">
-                        <a href="{{ post.url | relative_url }}" class="text-decoration-none">
-                            <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                            <h4> {{ post.title }} </h4>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    {% for post in posts %}
+                        <li class="glide__slide">
+                            <a href="{{ post.url | relative_url }}" class="text-decoration-none">
+                                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
+                                <h4> {{ post.title }} </h4>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-        <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-        </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+            </div>
 
-        {% if posts and posts.size > 0 %}
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                {% for post in posts %}
-                    <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
-                {% endfor %}
-                </div>
-        {% endif %}
+            {% if posts and posts.size > 0 %}
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    {% for post in posts %}
+                        <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
+                    {% endfor %}
+                    </div>
+            {% endif %}
+        </div>
     </div>
 </div>
