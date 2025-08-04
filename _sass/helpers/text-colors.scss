@@ -1,11 +1,16 @@
-@each $name, $col in $colors {
-  .text-color-#{$name} {
-    color: $col !important;
-  }
-  .bg-color-#{$name} {
-    background-color: $col !important;
-  }
-  .border-color-#{$name} {
-    border-color: $col !important;
-  }
+.text-primary{
+    color: $color-white;
 }
+
+.text-secondary{
+    color: $color-blue;
+}
+
+.text-success{
+    color: $color-green;
+}
+
+.text-error{
+    color: $color-red;
+}
+

@@ -1,15 +1,21 @@
-body{
-    background-color: $color-blue;
-}
+// Defines
+@import "defines/fonts";
+@import "defines/colors";
+
+// Helpers
+@import "helpers/flex";
+
+@import "helpers/text-aligns";
+@import "helpers/text-colors";
+@import "helpers/text-decoration";
+
+@import "helpers/background-colors";
+
+@import "helpers/display";
+
+@import "glide/glide";
 
 *{
     color: $color-white;
     font-family: DM-Serif;
 }
-
-/*
-h1, h2, h3, h4, h5, p{
-    color: $color-white;
-    font-family: DM-Serif;
-}
-*/
