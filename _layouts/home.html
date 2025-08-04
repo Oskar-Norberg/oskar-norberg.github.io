@@ -58,8 +58,10 @@ layout: default
             <ul class="glide__slides">
                 {% for post in posts %}
                     <li class="glide__slide">
-                        <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                        <h4> {{ post.title }} </h4>
+                        <a href="{{ post.url | relative_url }}" class="text-decoration-none">
+                            <img src="{{ '../assets/img/car.jpg' | relative_url }}">
+                            <h4> {{ post.title }} </h4>
+                        </a>
                     </li>
                 {% endfor %}
             </ul>
