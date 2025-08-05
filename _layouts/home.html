@@ -11,10 +11,10 @@ layout: default
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     {% for post in featured_posts %}
-                        <li class="glide__slide">
+                        <li class="glide__slide bg-primary-accent">
                             <a href="{{ post.url | relative_url }}" class="text-decoration-none">
                                 <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                                <h4> {{ post.title }} </h4>
+                                <h4 class="text-center"> {{ post.title }} </h4>
                             </a>
                         </li>
                     {% endfor %}
@@ -48,10 +48,10 @@ layout: default
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     {% for post in posts %}
-                        <li class="glide__slide">
+                        <li class="glide__slide bg-primary-accent">
                             <a href="{{ post.url | relative_url }}" class="text-decoration-none">
                                 <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                                <h4> {{ post.title }} </h4>
+                                <h4 class="text-center"> {{ post.title }} </h4>
                             </a>
                         </li>
                     {% endfor %}

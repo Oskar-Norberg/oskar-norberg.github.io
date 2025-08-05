@@ -4,8 +4,10 @@ layout: default
 
 <div class="container flex-center">
     <div class="row">
-        {% for post in site.posts %}
-            <a href="{{ post.url }}" class="display-block text-center">{{ post.title }}</a>
-        {% endfor %}
+        <ul>
+            {% for post in site.posts %}
+                <li class="list-style-type-none"><a href="{{ post.url }}" class="display-block text-center">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
