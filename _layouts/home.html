@@ -2,8 +2,33 @@
 layout: default
 ---
 
+<div class="container container-fullscreen">
+    <div class="row flex-center bg-primary-accent">
+        <div class="four columns"></div>
+
+        <div class="three columns">
+            <img src="https://avatars.githubusercontent.com/u/111574811?v=4" style="width:100%; height:100%; padding-top: 2.5rem; padding-bottom: 2.5rem; display:inline-block;">
+        </div>
+
+        <div class="three columns">
+            <p class="text-center" style="font-size:1.2em">
+                I'm some sort of programmer this is just sample text yada yada, whoopie doo I am writing so much text.
+                I love web development (lie)
+            </p>
+        </div>
+
+        <div class="four columns"></div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
 <div class="container">
+
     <h2 class="text-center">Selected works</h2>
+
     <div class="row">
         {% assign featured_posts = site.posts | where: "featured", true %}
 
