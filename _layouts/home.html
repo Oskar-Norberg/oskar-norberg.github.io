@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<div class="container container-fullscreen">
+<!-- FOR DESKTOP -->
+<div class="container container-fullscreen hidden-on-mobile">
     <div class="row flex-center bg-primary-accent">
         <div class="four columns"></div>
 
@@ -12,18 +13,32 @@ layout: default
 
         <div class="three columns">
             <p class="text-center" style="font-size:1.2em">
-                I'm some sort of programmer this is just sample text yada yada, whoopie doo I am writing so much text.
-                I love web development (lie)
+                {{ site.short-description }}
             </p>
         </div>
 
         <div class="four columns"></div>
     </div>
+    
+    <br>
+    <br>
+    <br>
 </div>
 
-<br>
-<br>
-<br>
+<!-- FOR MOBILE -->
+<div class="container container-fullscreen flex-center hidden-on-desktop">
+    <div class="row bg-primary-accent">
+        <img src="https://avatars.githubusercontent.com/u/111574811?v=4" style="width:50%; height:auto; padding-top: 2.5rem; padding-bottom: 2.5rem; display:block; margin-left:auto; margin-right: auto;">
+        <p class="text-center" style="font-size:1.2em">
+            {{ site.short-description }}
+        </p>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+</div>
+
 
 <div class="container">
 

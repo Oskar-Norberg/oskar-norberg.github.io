@@ -1,0 +1,21 @@
+// This scss contains the classes hidden-on-mobile and hidden-on-desktop.
+// I think you can surmise what they do.
+
+.hidden-on-mobile {
+  display: none;
+}
+
+.hidden-on-desktop {
+  display: unset;
+}
+
+@media (min-width: 550px) {
+  .hidden-on-mobile {
+    display: unset;
+  }
+
+  .hidden-on-desktop {
+    display: none;
+  }
+}
+
