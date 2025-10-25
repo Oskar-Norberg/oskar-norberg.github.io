@@ -2,114 +2,77 @@
 layout: default
 ---
 
-<!-- FOR DESKTOP -->
-<div class="container container-fullscreen hidden-on-mobile">
-    <div class="row flex-center bg-primary-accent">
-        <div class="four columns"></div>
+<!-- TODO: Fix ugly gap between navbar and content -->
 
-        <div class="three columns">
-            <img src="https://avatars.githubusercontent.com/u/111574811?v=4" style="width:100%; height:100%; padding-top: 2.5rem; padding-bottom: 2.5rem; display:inline-block;">
+<div>
+    <!-- TODO: Darken Background -->
+    <!-- TODO: Fix Image Stretching -->
+    <!-- Front Matter -->
+    <hr class="m-0 p-1">
+    <section class="hero is-halfheight m-0 " style="background-image: url({{ 'assets/img/car.jpg' | relative_url }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="is-size-1 has-text-weight-bold">{{ site.title }}</h1>
+                <p>{{ site.short-description }}</p>
+            </div>
         </div>
-
-        <div class="three columns">
-            <p class="text-center" style="font-size:1.2em">
-                {{ site.short-description }}
-            </p>
-        </div>
-
-        <div class="four columns"></div>
-    </div>
-    
-    <br>
-    <br>
-    <br>
+    </section>
+    <hr class="m-0 p-1">
 </div>
 
-<!-- FOR MOBILE -->
-<div class="container container-fullscreen flex-center hidden-on-desktop">
-    <div class="row bg-primary-accent">
-        <img src="https://avatars.githubusercontent.com/u/111574811?v=4" style="width:50%; height:auto; padding-top: 2.5rem; padding-bottom: 2.5rem; display:block; margin-left:auto; margin-right: auto;">
-        <p class="text-center" style="font-size:1.2em">
-            {{ site.short-description }}
-        </p>
-    </div>
+<div class="container px-4">
+    <!-- TODO: Make the big project selectable through _config.yml -->
+    <!-- Specialization Project -->
+    {% assign specializationImage = 'assets/img/car.jpg' | relative_url %}
+    {% 
+        assign specializationProjectText = "This is some longwinded text explaning the nature of the project. The project is called Specialization Project. This is because it is a separate projects from the other project, called the 'Other Project' project listed below. This is very important because you need to be able to differentiate these somehow."
+    %}
+    {% 
+        include project_view.html
+        heroText = ""
+        projectImage = specializationImage
+        projectTitle = "Specialization Project"
+        projectText = specializationProjectText
+        projectLink = "#"
+        imagePosition = "left"
+    %}
+
+    <hr>
+
+    <!-- Another Project -->
+    {% assign anotherProjectImage = 'assets/img/car.jpg' | relative_url %}
+    {% 
+        assign anotherProjectText = "This is some longwinded text explaning the nature of the project. The project is called Another Project. This is because it is a separate projects from the other other project, called the specialization project listed above. This is very important because you need to be able to differentiate these somehow."
+    %}
+    {% 
+        include project_view.html
+        heroText = ""
+        projectImage = anotherProjectImage
+        projectTitle = "Another Project"
+        projectText = anotherProjectText
+        projectLink = "#"
+        imagePosition = "right"
+    %}
+
+    <hr>
+
+    <!-- Game Projects -->
+    {% assign gameProjectsImage = 'assets/img/car.jpg' | relative_url %}
+    {% 
+        assign gameProjectsText = "This is some longwinded text explaning the nature of the project. The collection is called 'Game Projects'. This is because it is a collection of multiple game projects, separate from the the other projects listed above. This is very important because you need to be able to differentiate these somehow."
+    %}
+    {% 
+        include project_view.html
+        heroText = ""
+        projectImage = gameProjectsImage
+        projectTitle = "Game Projects"
+        projectText = gameProjectsText
+        projectLink = "#"
+        imagePosition = "left"
+    %}
+
+
     
-    <br>
-    <br>
-    <br>
-</div>
 
 
-<div class="container">
-
-    <h2 class="text-center">Selected works</h2>
-
-    <div class="row">
-        {% assign featured_posts = site.posts | where: "featured", true %}
-
-        <div class="glide">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    {% for post in featured_posts %}
-                        <li class="glide__slide bg-primary-accent">
-                            <a href="{{ post.url | relative_url }}" class="text-decoration-none">
-                                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                                <h4 class="text-center"> {{ post.title }} </h4>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-            </div>
-
-            {% if featured_posts and featured_posts.size > 0 %}
-                <div class="glide__bullets" data-glide-el="controls[nav]">
-                    {% for post in featured_posts %}
-                        <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
-                    {% endfor %}
-                    </div>
-            {% endif %}
-        </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <h2 class="text-center">Game Projects</h2>
-    <div class="row">
-        {% assign posts = site.categories["game-projects"] %}
-
-        <div class="glide">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    {% for post in posts %}
-                        <li class="glide__slide bg-primary-accent">
-                            <a href="{{ post.url | relative_url }}" class="text-decoration-none">
-                                <img src="{{ '../assets/img/car.jpg' | relative_url }}">
-                                <h4 class="text-center"> {{ post.title }} </h4>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-            </div>
-
-            {% if posts and posts.size > 0 %}
-                <div class="glide__bullets" data-glide-el="controls[nav]">
-                    {% for post in posts %}
-                        <button class="glide__bullet" data-glide-dir="={{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
-                    {% endfor %}
-                    </div>
-            {% endif %}
-        </div>
-    </div>
 </div>

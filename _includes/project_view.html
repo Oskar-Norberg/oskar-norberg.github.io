@@ -1,0 +1,45 @@
+<!--
+Inputs:
+heroText
+projectImage
+projectTitle
+projectText
+projectLink
+
+# CaseSensitive for now, *should probably also just be 0 or 1*
+imagePosition // "left" or "right"
+-->
+
+<!-- TODO: This has a bug where if its displayed on the left on mobile it will appear above. Fix somehow. -->
+<div class="columns is-vcentered">
+    {% if include.imagePosition == "left" %}
+        <div class="column is-7">
+            <!-- TODO: Does this have to be a hero? Or should it just be a figure/image? -->
+            <section class="hero is-halfheight my-3" style="background-image: url({{include.projectImage}}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="hero-body">
+                    <div class="container has-text-centered">{{ iclude.heroText }}</div>
+                </div>
+            </section>
+        </div>
+    {% endif %}
+
+    <div class="column has-text-centered">
+        <h1 class="is-size-1">
+            {{ include.projectTitle }}
+        </h1>
+        <p class="my-2">{{include.projectText}}</p>
+        <!-- TODO: SPECIALIZATION LINK -->
+        <button class="button my-2"><a href="#">Read More</a></button> 
+    </div>
+
+    {% if include.imagePosition != "left" %}
+        <div class="column is-7">
+            <!-- TODO: Does this have to be a hero? Or should it just be a figure/image? -->
+            <section class="hero is-halfheight my-3" style="background-image: url({{include.projectImage}}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="hero-body">
+                    <div class="container has-text-centered">{{iclude.heroText}}</div>
+                </div>
+            </section>
+        </div>
+    {% endif %}
+</div>
