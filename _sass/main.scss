@@ -1,1 +1,9 @@
-@import "bulma-extensions/size-helpers.scss"
+// Definitions
+@import "defines/fonts.scss";
+
+// Bulma Extensions
+@import "bulma-extensions/size-helpers.scss";
+@import "bulma-extensions/hero-helpers.scss";
+
+// Font Helpers
+@import "helpers/font-helper.scss";

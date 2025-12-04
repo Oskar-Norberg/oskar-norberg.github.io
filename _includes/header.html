@@ -1,22 +1,20 @@
 <!-- TODO: Get Feedback on whether the header should be sticky or not -->
 <!-- style="position: sticky; top: 0; z-index: 30;" on the header itself-->
-<header class="has-background-dark p-4 m-0">
+<header class="has-background-dark p-2 m-0">
     <!-- NAVBAR -->
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="container is-flex is-justify-content-space-between is-align-items-center">
 
             <!-- LEFT -->
             <div class="navbar-brand is-flex is-flex-direction-column">
-                <h1 class="title has-text-white mb-1 is-12">{{ site.title }}</h1>
-                <h2 class="subtitle has-text-white is-6">{{ site.description }}</h2>
+                <h1 class="title has-text-white mb-1 is-12 header-font is-size-1">{{ site.title }}</h1>
+                <h2 class="subtitle has-text-white is-6 header-font">{{ site.description }}</h2>
             </div>
 
             <!-- RIGHT -->
             <div class="navbar-end">
                 <div class="navbar-item">
                     <a href="{{ '/' | relative_url }}" class="has-text-info">Home</a> 
-                    /
-                    <a href="{{ '/archive/' | relative_url }}" class="has-text-info">Archive</a> 
                     /
                     <a href="{{ '/about/' | relative_url }}" class="has-text-info">About</a>
                 </div>
