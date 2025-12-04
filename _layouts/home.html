@@ -2,77 +2,10 @@
 layout: default
 ---
 
-<!-- TODO: Fix ugly gap between navbar and content -->
-
-<div>
-    <!-- TODO: Darken Background -->
-    <!-- TODO: Fix Image Stretching -->
-    <!-- Front Matter -->
-    <hr class="m-0 p-1">
-    <section class="hero is-halfheight m-0 " style="background-image: url({{ 'assets/img/car.jpg' | relative_url }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="is-size-1 has-text-weight-bold">{{ site.title }}</h1>
-                <p>{{ site.short-description }}</p>
-            </div>
-        </div>
-    </section>
-    <hr class="m-0 p-1">
-</div>
-
 <div class="container px-4">
-    <!-- TODO: Make the big project selectable through _config.yml -->
-    <!-- Specialization Project -->
-    {% assign specializationImage = 'assets/img/car.jpg' | relative_url %}
-    {% 
-        assign specializationProjectText = "This is some longwinded text explaning the nature of the project. The project is called Specialization Project. This is because it is a separate projects from the other project, called the 'Other Project' project listed below. This is very important because you need to be able to differentiate these somehow."
-    %}
-    {% 
-        include project_view.html
-        heroText = ""
-        projectImage = specializationImage
-        projectTitle = "Specialization Project"
-        projectText = specializationProjectText
-        projectLink = "#"
-        imagePosition = "left"
-    %}
-
+    {% include project_view.html postTitle = "RNGOEngine" imagePosition = "left" %}
     <hr>
-
-    <!-- Another Project -->
-    {% assign anotherProjectImage = 'assets/img/car.jpg' | relative_url %}
-    {% 
-        assign anotherProjectText = "This is some longwinded text explaning the nature of the project. The project is called Another Project. This is because it is a separate projects from the other other project, called the specialization project listed above. This is very important because you need to be able to differentiate these somehow."
-    %}
-    {% 
-        include project_view.html
-        heroText = ""
-        projectImage = anotherProjectImage
-        projectTitle = "Another Project"
-        projectText = anotherProjectText
-        projectLink = "#"
-        imagePosition = "right"
-    %}
-
+    {% include project_view.html postTitle = "Lymbo" imagePosition = "right" %}
     <hr>
-
-    <!-- Game Projects -->
-    {% assign gameProjectsImage = 'assets/img/car.jpg' | relative_url %}
-    {% 
-        assign gameProjectsText = "This is some longwinded text explaning the nature of the project. The collection is called 'Game Projects'. This is because it is a collection of multiple game projects, separate from the the other projects listed above. This is very important because you need to be able to differentiate these somehow."
-    %}
-    {% 
-        include project_view.html
-        heroText = ""
-        projectImage = gameProjectsImage
-        projectTitle = "Game Projects"
-        projectText = gameProjectsText
-        projectLink = "#"
-        imagePosition = "left"
-    %}
-
-
-    
-
-
+    {% include project_view.html postTitle = "ExampleProject" imagePosition = "left" %}
 </div>

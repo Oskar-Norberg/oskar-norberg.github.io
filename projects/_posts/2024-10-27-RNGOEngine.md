@@ -1,13 +1,12 @@
 ---
-title: Unity Event Bus
-description: Test post
+title: RNGOEngine
+description: RNGOEngine is a C++ game engine runtime and editor with ECS, custom made OpenGL RHI Wrapper and RenderPass system.
 layout: project
 
+cover_image: assets/img/Project/RNGOEngine.gif
 duration: 5 weeks
-
-team-size: 5
-
-featured: true
+team_size: 5
+tags: ["C++", "OpenGL", "ImGui"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
