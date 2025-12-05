@@ -2,10 +2,79 @@
 layout: default
 ---
 
-<div class="container px-4">
+<!-- Top Project View -->
+<div class="container px-4 pb-4">
     {% include project_view.html postTitle = "RNGOEngine" imagePosition = "left" %}
     <hr>
     {% include project_view.html postTitle = "Lymbo" imagePosition = "right" %}
     <hr>
     {% include project_view.html postTitle = "ExampleProject" imagePosition = "left" %}
+</div>
+
+<!-- About Me -->
+
+<div class="has-background-dark" id="about-me">
+    <div class="container px-4">
+        <div class="columns">
+            <!-- Avatar Image -->
+            <div class="column is-flex is-align-items-center is-justify-content-center">
+                <section class="hero is-medium-mobile is-medium-desktop my-3 has-background has-radius-50 is-square image"
+                    style="background-image: url({{ "assets/img/car.jpg" | relative_url }});">
+                    <div class="hero-body">
+                    </div>
+                </section>
+            </div>
+
+            <!-- About me text -->
+            <div class="column has-text-centered">
+                <h1 class="is-size-1 header-font title">{{ site.title }}</h1>
+                <h2 class="is-size-3 subtitle">{{ site.description }}</h2>
+
+                <div class="content">
+                    <p>
+                        This is some text about how i love programming and i love video game and i make the engine and i
+                        think it is fun and i like the engine and the engine likes me (sometimes) its kind of a love-hate
+                        relation. But all in all this is just some long text i really should've just put lorem here, this
+                        should also be stored in the config.yml
+                    </p>
+                </div>
+
+                <div class="content columns has-text-left is-flex is-justify-content-center">
+                    <div class="column">
+                        <h2 class="is-size-3 title">
+                            Languages
+                        </h2>
+                        <ul class="is-size-4">
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+
+                    <div class="column">
+                        <h2 class="is-size-3 title">
+                            Software
+                        </h2>
+                        <ul class="is-size-4">
+                            <li>Unity</li>
+                            <li>Unreal Engine</li>
+                            <li>CMake</li>
+                            <li>Perforce + Git</li>
+                        </ul>
+                    </div>
+
+                    <div class="column">
+                        <h2 class="is-size-3 title">
+                            Libraries
+                        </h2>
+                        <ul class="is-size-4">
+                            <li>EnTT</li>
+                            <li>OpenGL</li>
+                            <li>GLFW</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
