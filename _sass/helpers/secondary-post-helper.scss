@@ -17,16 +17,12 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.secondary-post:hover {
-    cursor: pointer;
-}
-
-.description {
+// TODO: Get these to work with --bulma-title-color
+.secondary-post .description {
+    color: rgba(255, 255, 255, 0);
     transition: color 0.3s ease;
-    color: transparent !important;
 }
 
 .secondary-post:hover .description {
-    display: inline-block;
-    color: white !important;
+    color: rgba(255, 255, 255, 1);
 }
