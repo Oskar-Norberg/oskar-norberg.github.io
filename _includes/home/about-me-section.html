@@ -1,0 +1,39 @@
+<div class="columns">
+    <!-- Avatar Image -->
+    <div class="column is-flex is-align-items-center is-justify-content-center">
+        <section class="hero is-medium-mobile is-medium-desktop my-3 has-background has-radius-50 is-square image"
+            style="background-image: url({{ "assets/img/car.jpg" | relative_url }});">
+            <div class="hero-body">
+            </div>
+        </section>
+    </div>
+
+    <!-- About me text -->
+    <div class="column has-text-centered">
+        <h1 class="is-size-1 header-font title">{{ site.title }}</h1>
+        <h2 class="is-size-3 subtitle">{{ site.description }}</h2>
+
+        <div class="content">
+            <p>
+                {{ about-me-text }}
+            </p>
+        </div>
+
+        <div class="content columns has-text-left is-flex is-justify-content-center">
+
+            {% for section in site.about-sections %}
+            <div class="column">
+
+                <h2 class="is-size-3 title">
+                    {{ section[0] }}
+                </h2>
+                <ul class="is-size-4">
+                    {% for label in section[1] %}
+                    <li>{{ label }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

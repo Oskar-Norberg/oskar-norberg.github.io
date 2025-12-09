@@ -7,7 +7,7 @@ imagePosition // "left" or "right"
 -->
 
 <!-- TODO: This has a bug where if its displayed on the left on mobile it will appear above. Fix somehow. -->
-<!-- Stupidly case sensetive -->
+<!-- Stupidly Case sensitive -->
 {% assign foundPost = site.posts | where_exp: "post", "post.title == include.postTitle" | first %}
 
 {% if foundPost %}
