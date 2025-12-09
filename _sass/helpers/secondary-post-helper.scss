@@ -1,0 +1,32 @@
+.secondary-post {
+    position: relative;
+    overflow: hidden;
+}
+
+.secondary-post .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+}
+
+.secondary-post:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.secondary-post:hover {
+    cursor: pointer;
+}
+
+.description {
+    transition: color 0.3s ease;
+    color: transparent !important;
+}
+
+.secondary-post:hover .description {
+    display: inline-block;
+    color: white !important;
+}
