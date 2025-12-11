@@ -1,21 +1,21 @@
 - title: Blood Maiden
   tag: UE/C++
-  cover-image: assets/img/Project/BloodMaiden.jpg
+  cover-image: assets/projects/Other/BloodMaiden.jpg
   description: Worked on enemy AI, health and event handling/bus systems.
 
 - title: The Last Flame
   tag: Unity/C#
-  cover-image: assets/img/Project/LastFlame.jpg
-  description: Worked on "herdable" human AI, developed reusable Unity Package for setting up behaviour trees.
+  cover-image: assets/projects/Other/LastFlame.jpg
+  description: Worked on "herdable" human AI and cutscene/audio systems, developed reusable Unity Package for setting up behaviour trees.
 
 - title: Lizard Escape
   tag: Unity/C#
-  cover-image: assets/img/Project/LizardEscape.jpg
+  cover-image: assets/projects/Other/LizardEscape.jpg
   description: First Game Project at Futuregames. Worked on player input, custom A* pathfinding and lizard destruction system.
 
 - title: asdfasdf
   tag: UE/C++
-  cover-image: assets/img/Project/RNGOEngine.gif
+  cover-image: assets/projects/Other/RNGOEngine.gif
 
 - title: asdf
   tag: Unity/C#
