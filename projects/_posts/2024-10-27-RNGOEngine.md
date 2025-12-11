@@ -10,6 +10,8 @@ duration: 5 weeks
 team_size: 1
 tags: ["C++", "OpenGL", "ImGui", "EnTT"]
 
+github: https://github.com/Oskar-Norberg/RNGOEngine-Core
+
 featured-main: 10
 ---
 
