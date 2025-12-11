@@ -16,14 +16,18 @@ imagePosition // "left" or "right"
 {% endif %}
 
 <div class="columns is-vcentered">
+    <!-- TODO: Get rid of this copy-paste garbage -->
     {% if include.imagePosition == "left" %}
     <div class="column is-7">
-        <section class="hero is-small-desktop is-medium-mobile my-3 has-background"
+        <a href="{{ foundPost.url | relative_url }}">
+
+            <section class="hero is-small-desktop is-medium-mobile my-3 has-background"
             style="background-image: url({{ foundPost.cover_image | relative_url }});">
             <div class="hero-body">
                 <div class="container has-text-centered"></div>
             </div>
         </section>
+    </a>
     </div>
     {% endif %}
 
@@ -66,12 +70,15 @@ imagePosition // "left" or "right"
 
     {% if include.imagePosition != "left" %}
     <div class="column is-7">
-        <section class="hero is-small-desktop is-medium-mobile my-3"
-            style="background-image: url({{ foundPost.cover_image | relative_url }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <a href="{{ foundPost.url | relative_url }}">
+
+            <section class="hero is-small-desktop is-medium-mobile my-3 has-background"
+            style="background-image: url({{ foundPost.cover_image | relative_url }});">
             <div class="hero-body">
-                <div class="container has-text-centered">{{ include.heroText }}</div>
+                <div class="container has-text-centered"></div>
             </div>
         </section>
+    </a>
     </div>
     {% endif %}
 </div>

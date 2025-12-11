@@ -4,6 +4,8 @@ description: RNGOEngine is a C++ game engine runtime and editor with ECS, custom
 layout: project
 
 cover_image: assets/img/Project/RNGOEngine.gif
+main-video: assets/vid/Project/LymboAngel.mp4
+
 duration: 5 weeks
 team_size: 1
 tags: ["C++", "OpenGL", "ImGui", "EnTT"]
