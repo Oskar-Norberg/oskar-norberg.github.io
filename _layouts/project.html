@@ -5,10 +5,11 @@ layout: default
 <div class="container p-4">
     <div class="columns">
         <div class="column is-three-fifths">
-            <video width="100%" height="auto" src="{{page.main-video | relative_url }}" controls autoplay muted loop></video>
+            <video width="100%" height="auto" src="{{page.main-video | relative_url }}" controls autoplay muted
+                loop></video>
         </div>
         <div class="column">
-            <div class="box">
+            <div class="content">
                 <h2 class="is-size-2 has-text-weight-bold header-font title">{{ page.title }}</h2>
 
                 <hr>
@@ -41,15 +42,18 @@ layout: default
                     {% endfor %}
                 </p>
 
-                <p class="pl-5 content has-text-right">
-                    <ul>
-                        <li>- Introduction</li>
-                        <li>- Runtime</li>
-                        <li>- Editor</li>
-                        <li>- yada yada</li>
-                        <li>- Reflection</li>
-                    </ul>
-                </p>
+                <!-- TODO: A table of contents would be nice -->
+                <!--
+                    <p class="pl-5 content has-text-right">
+                        <ul>
+                            <li>- Introduction</li>
+                            <li>- Runtime</li>
+                            <li>- Editor</li>
+                            <li>- yada yada</li>
+                            <li>- Reflection</li>
+                        </ul>
+                    </p>
+                    -->
             </div>
         </div>
     </div>
