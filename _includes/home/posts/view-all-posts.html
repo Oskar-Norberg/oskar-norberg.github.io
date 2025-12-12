@@ -5,6 +5,8 @@
     <!-- TODO: Post should probably be passed by value instead of passing its title -->
     {% assign post_name = post.title %}
 
+    {{ post.featured_main }}
+
     {% assign pos = forloop.index0 | modulo: 2 | plus: 0 %}
 
     {% if pos == 0 %}
