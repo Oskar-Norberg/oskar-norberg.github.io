@@ -1,11 +1,9 @@
 {% assign featured_posts = site.posts | where_exp: "p", "p['featured_main']" %}
-{% assign sorted_posts = featured_posts | sort: "featured-main" | reverse %}
+{% assign sorted_posts = featured_posts | sort: "featured_main" | reverse %}
 
 {% for post in sorted_posts %}
     <!-- TODO: Post should probably be passed by value instead of passing its title -->
     {% assign post_name = post.title %}
-
-    {{ post.featured_main }}
 
     {% assign pos = forloop.index0 | modulo: 2 | plus: 0 %}
 
