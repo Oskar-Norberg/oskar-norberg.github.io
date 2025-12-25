@@ -15,12 +15,11 @@ about-sections:
   Libraries: ["EnTT", "OpenGL", "GLFW"]
 
 # Socials
-github-username: Oskar-Norberg
 github-link: https://github.com/Oskar-Norberg
+linkedin-link: https://linkedin.com/in/oskar-norberg-6905b1310
+itch-link: https://oskar-norberg.itch.io
 
-linkedin-link: https://linkedin.com/in/oskar-norberg-6905b1310/
-
-email-address: oskar.norberg2004@outlook.com
+formspree-key: xykgqkdn
 
 markdown: kramdown
 highlighter: rouge

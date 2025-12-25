@@ -2,16 +2,22 @@
   tag: UE/C++
   cover-image: assets/projects/Other/BloodMaiden.jpg
   description: Worked on enemy AI, health and event handling/bus systems.
+  itch: https://futuregames.itch.io/blood-maiden
+  #github: 
 
 - title: The Last Flame
   tag: Unity/C#
   cover-image: assets/projects/Other/LastFlame.jpg
   description: Worked on "herdable" human AI and cutscene/audio systems, developed reusable Unity Package for setting up behaviour trees.
+  itch: https://futuregames.itch.io/the-last-flame
+  #github: 
 
 - title: Lizard Escape
   tag: Unity/C#
   cover-image: assets/projects/Other/LizardEscape.jpg
   description: First Game Project at Futuregames. Worked on player input, custom A* pathfinding and lizard destruction system.
+  itch: https://futuregames.itch.io/lizardescape
+  #github: 
 
 - title: asdfasdf
   tag: UE/C++

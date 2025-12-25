@@ -3,8 +3,8 @@
 <div class="columns is-multiline" id="other-projects">
     {% for project in posts %}
         <div class="column is-one-third">
-            <section class="hero secondary-post is-small-desktop is-medium-mobile my-3 has-background"
-                style="background-image: url('{{ project.cover-image | relative_url }}');">
+            <section class="hero secondary-post is-small-desktop is-medium-mobile my-3 has-background has-radius-3"
+                style="background-image: url('{{ project.cover-image | relative_url }}');"> 
                 <div class="overlay"></div>
                 <div class="hero-body position-relative">
                     <div class="container title">{{ project.title }}</div>
