@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        if (selectableArea == null) {
-            console.error(`Selectable area of selectable ${selectable} is null`);
+        if (!selectableArea) {
+            alert(`Selectable area of selectable ${selectable} is null`);
+            continue;
         }
 
         // Get all texts in Dropdown Area
@@ -40,24 +41,33 @@ document.addEventListener("DOMContentLoaded", () => {
         for (const child of selectable.children) {
             for (const childAttribute of child.attributes) {
                 if (childAttribute.name === dropdownButtonNameAttribute) {
-                    const textToOpen = childAttribute.value;
+                    const attributeToOpen = childAttribute.value;
 
                     child.addEventListener("click", () => {
-                        // TODO: If you disable the currently active one it should close entirely
-
-                        for (const key in selectableTexts){
-                            selectableTexts[key].classList.remove(dropdownTextEnabledClassName);
-                        }
-                        
-                        if (!(textToOpen in selectableTexts)){
-                            console.error(`Selectable named ${textToOpen} does not exist`);
+                        if (!(attributeToOpen in selectableTexts)) {
+                            alert(`Selectable named ${attributeToOpen} does not exist`);
                             return;
                         }
 
-                        // Toggle active
-                        const text = selectableTexts[textToOpen];
+                        const textToOpen = selectableTexts[attributeToOpen];
 
-                        text.classList.add(dropdownTextEnabledClassName);
+                        // If you try to enable the currently selected one, disable all.
+                        if (textToOpen.classList.contains(dropdownTextEnabledClassName)) {
+                            // Disable all
+                            for (const key in selectableTexts) {
+                                selectableTexts[key].classList.remove(dropdownTextEnabledClassName);
+                            }
+                        } else {
+                            // Disable all
+                            for (const key in selectableTexts) {
+                                selectableTexts[key].classList.remove(dropdownTextEnabledClassName);
+                            }
+
+                            // Toggle active
+                            const text = selectableTexts[attributeToOpen];
+
+                            text.classList.add(dropdownTextEnabledClassName);
+                        }
                     });
                 }
             }
