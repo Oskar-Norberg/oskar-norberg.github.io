@@ -10,8 +10,15 @@
 
     <!-- About me text -->
     <div class="column has-text-centered">
-        <h1 class="is-size-1 header-font title">{{ site.title }}</h1>
-        <h2 class="is-size-3 subtitle mt-1">{{ site.description }}</h2>
+        <div
+            class="content m-0 p-0 is-flex is-align-items-start is-justify-content-center is-flex-direction-row has-text-centered">
+            <h1 class="is-size-1 m-0 p-0 header-font title">{{ site.name }}</h1>
+            <p>({{ site.pronouns }})</p>
+        </div>
+
+        <div class="content m-0 p-0">
+            <h2 class="is-size-3 subtitle">{{ site.description }}</h2>
+        </div>
 
         <div class="content">
             <p class="is-size-5">
