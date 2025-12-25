@@ -26,31 +26,12 @@ Random text
 - [qwer](https://www.qwer.com) qwer text
 - [zxcv](https://www.zxcv.com) zxcv text
 
-```c++
-#pragma once
+<div class="selectable-dropdown">
+    <button class="selectable-dropdown-button" data-dropdown-selectable-name="RendererAPI-Header">RenderAPI.h</button>
+    <button class="selectable-dropdown-button" data-dropdown-selectable-name="RendererAPI-Source">RenderAPI.cpp</button>
 
-#include "System.h"
-
-#include "TestSystem.h"
-#include "TestSystem2.h"
-#include "TestSystem3.h"
-#include "TestSystem4.h"
-
-class World;
-class ISystem;
-
-// TODO: Implement destruction of systems.
-class SystemScheduler
-{
-public:
-    SystemScheduler();
-
-    void Update(World& world, float deltaTime);
-
-private:
-    std::tuple<TestSystem, TestSystem2, TestSystem3, TestSystem4> m_systems;
-    bool m_initialized;
-
-    void InitializeSystems();
-};
-```
+<div class="selectable-dropdown-area">
+<code class="selectable-text" data-code-text-name="RendererAPI-Header">All the code for the RenderAPI Header</code>
+<code class="selectable-text" data-code-text-name="RendererAPI-Source">All the code for the RenderAPI Source</code>
+</div>
+</div>
