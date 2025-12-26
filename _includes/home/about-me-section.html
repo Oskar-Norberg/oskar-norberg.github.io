@@ -12,23 +12,23 @@
     <div class="column has-text-centered">
         <div
             class="content m-0 p-0 is-flex is-align-items-start is-justify-content-center is-flex-direction-row has-text-centered">
-            <h1 class="is-size-1 m-0 p-0 header-font title">{{ site.name }}</h1>
-            <p>({{ site.pronouns }})</p>
+            <h1 class="is-size-1 m-0 p-0 header-font title">{{ site.data.about.name }}</h1>
+            <p>({{ site.data.about.pronouns }})</p>
         </div>
 
         <div class="content m-0 p-0">
-            <h2 class="is-size-3 subtitle">{{ site.description }}</h2>
+            <h2 class="is-size-3 subtitle">{{ site.data.about.description }}</h2>
         </div>
 
         <div class="content">
             <p class="is-size-5">
-                {{ site.about-me-text }}
+                {{ site.data.about.about-me-text }}
             </p>
         </div>
 
         <div class="content columns has-text-left is-flex is-justify-content-center">
 
-            {% for section in site.about-sections %}
+            {% for section in site.data.about.about-sections %}
             <div class="column">
 
                 <h2 class="is-size-3 title">
