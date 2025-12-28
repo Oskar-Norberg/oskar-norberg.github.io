@@ -20,10 +20,8 @@
             <h2 class="is-size-3 subtitle">{{ site.data.about.description }}</h2>
         </div>
 
-        <div class="content">
-            <p class="is-size-5">
-                {{ site.data.about.about-me-text }}
-            </p>
+        <div class="content about-me-text">
+                {{ site.data.about.about-me-text | markdownify }}
         </div>
 
         <div class="content columns has-text-left is-flex is-justify-content-center">
@@ -31,10 +29,10 @@
             {% for section in site.data.about.about-sections %}
             <div class="column">
 
-                <h2 class="is-size-3 title">
+                <h2 class="is-size-3 title mb-0">
                     {{ section[0] }}
                 </h2>
-                <ul class="is-size-4">
+                <ul class="is-size-4 mt-0">
                     {% for label in section[1] %}
                     <li>{{ label }}</li>
                     {% endfor %}

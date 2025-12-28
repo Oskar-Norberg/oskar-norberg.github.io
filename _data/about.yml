@@ -4,9 +4,16 @@ description: Engine/Tools-Programmer.
 name: Oskar Norberg
 pronouns: he/him
 about-me-text:
-  This is some text about how i love programming and i love video game and i make the engine and i
-  think it is fun and i like the engine and the engine likes me (sometimes) its kind of a love-hate
-  relation. But all in all this is just some long text i really should've just put lorem here, this is also stored in the config.yml
+  I'm **Oskar Norberg**, an **Engine & Tools** programmer from Stockholm, Sweden. 
+  My passion lies in creating **tools & software** to aid in content creation. 
+  With experience in both **standalone/desktop C++** along with **Unreal Engine** and **Unity** 
+  I'm interested in **rendering**, **performance** and **architecting** competent systems with **modularity** and **scalability**.
+
+
+  Outside of programming I also enjoy **photography**, **movies** and **music**. 
+  My favorite type of photography is **architectural** and **urban photography**, some of which you can see on my blog [[not created]]. 
+  Despite being **a bit forgetful**, I'll never forget to bring my camera along for a trip. 
+
 
 about-sections:
   Languages: ["C++", "C#", "Java"]
