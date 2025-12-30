@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>{{ page.title }} - {{ site.data.about.title }}</title>
-        <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-        <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
-        <link rel="stylesheet" href="{{ '/assets/vendor/base-16-dark/base16.dark.css' | relative_url }}">
-    </head>
-    <body>
-        {{ content }}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script src="{{ '/assets/js/scroll-button-setup.js' | relative_url }}"></script>
-        <script src="{{ '/assets/js/dropdown-selectable.js' | relative_url }}"></script>
-    </body>
-</html> 
+    <title>{{ page.title }} - {{ site.data.about.title }}</title>
+
+    <!-- OGP -->
+    <meta property="og:title" content="{{ page.title }} - {{ site.data.about.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+    {% if page.cover_image %}
+    <meta property="og:image" content="{{ page.cover_image | absolute_url }}" />
+    {% endif %}
+    {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}" />
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/base-16-dark/base16.dark.css' | relative_url }}">
+</head>
+
+<body>
+    {{ content }}
+
+    <script src="{{ '/assets/js/scroll-button-setup.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/dropdown-selectable.js' | relative_url }}"></script>
+</body>
+
+</html>

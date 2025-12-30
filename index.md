@@ -1,6 +1,8 @@
 ---
 layout: home
 title: Home
----
 
-This is test text from the home page
+# For the sites link-preview
+cover_image: assets/img/car.jpg
+description: Oskar Norberg, Engine & Tools programmer
+---
