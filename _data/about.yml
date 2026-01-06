@@ -14,6 +14,10 @@ about-me-text:
   My favorite type of photography is **architectural** and **urban photography**, some of which you can see on my blog [[not created]]. 
   Despite being **a bit forgetful**, I'll never forget to bring my camera along for a trip. 
 
+# From root path
+profile_picture: assets/img/OskarNorberg.jpg
+favicon: assets/img/car.jpg
+
 
 about-sections:
   Languages: ["C++", "C#", "Java"]
