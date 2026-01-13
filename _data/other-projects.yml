@@ -11,26 +11,18 @@
   cover-image: assets/projects/Other/BloodMaiden.jpg
   description: Worked on enemy AI, health and event handling/bus systems.
   itch: https://futuregames.itch.io/blood-maiden
-  #github: 
+  github: https://github.com/Oskar-Norberg/Blood-Maiden-GP3-Code-Only
 
 - title: The Last Flame
   tag: Unity/C#
   cover-image: assets/projects/Other/LastFlame.jpg
   description: Worked on "herdable" human AI and cutscene/audio systems, developed reusable Unity Package for setting up behaviour trees.
   itch: https://futuregames.itch.io/the-last-flame
-  #github: 
+  github: github.com/Oskar-Norberg/The-Last-Flame-GP2-Code-Only
 
 - title: Lizard Escape
   tag: Unity/C#
   cover-image: assets/projects/Other/LizardEscape.jpg
   description: First Game Project at Futuregames. Worked on player input, custom A* pathfinding and lizard destruction system.
   itch: https://futuregames.itch.io/lizardescape
-  #github: 
-
-- title: asdfasdf
-  tag: UE/C++
-  cover-image: assets/projects/Other/RNGOEngine.gif
-
-- title: asdf
-  tag: Unity/C#
-  cover-image: assets/img/car.jpg
+  github: https://github.com/Oskar-Norberg/Lizard-Escape-GP1-Code-Only 
