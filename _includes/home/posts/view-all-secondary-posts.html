@@ -7,7 +7,7 @@
             style="background-image: url('{{ project.cover-image | relative_url }}');">
             <div class="overlay p-3 is-flex is-align-items-end">
                 {% if project.website %}
-                <a href="{{ project.website }}" class="icon mx-2">
+                <a href="{{ project.website }}" class="icon mx-2" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-globe" viewBox="0 0 16 16">
                         <path
@@ -16,7 +16,7 @@
                 </a>
                 {% endif %}
                 {% if project.itch %}
-                <a href="{{ project.itch }}" class="icon mx-2">
+                <a href="{{ project.itch }}" class="icon mx-2" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" fill="currentColor"
                         class="bi bi-itch" viewBox="0 0 245.37069 220.73612">
                         <path
@@ -25,7 +25,7 @@
                 </a>
                 {% endif %}
                 {% if project.github %}
-                <a href="{{ project.github }}" class="icon mx-2">
+                <a href="{{ project.github }}" class="icon mx-2" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16" class="text-center">
                         <path
