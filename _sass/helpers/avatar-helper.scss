@@ -1,0 +1,11 @@
+.avatar {
+    width: 80%;
+    height: 80%;
+}
+
+@media screen and (min-width: 1024px) {
+    .avatar {
+        width: 65%;
+        height: 65%;
+    }
+}
