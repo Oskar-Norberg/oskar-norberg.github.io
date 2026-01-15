@@ -21,7 +21,7 @@ favicon: assets/img/car.jpg
 
 about-sections:
   Languages: ["C++", "C#", "Java"]
-  Software: ["Unity", "Unreal Engine", "CMake", "Perforce + Git"]
+  Software: ["CMake", "Unreal Engine", "Unity", "Godot", "Perforce + Git"]
   Libraries: ["EnTT", "OpenGL", "ImGui", "GLFW"]
 
 # Socials
