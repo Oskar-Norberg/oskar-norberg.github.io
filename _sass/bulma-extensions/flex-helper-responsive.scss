@@ -1,0 +1,9 @@
+@media screen and (min-width: 768px) {
+    .is-flex-direction-row-tablet{
+        flex-direction: row !important;
+    }
+    
+    .is-flex-direction-row-reverse-tablet{
+        flex-direction: row-reverse !important;
+    }
+}

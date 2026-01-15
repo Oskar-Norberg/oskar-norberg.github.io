@@ -6,7 +6,6 @@ postTitle // Title of the post to search for. Gets metadata from that post.
 imagePosition // "left" or "right"
 -->
 
-<!-- TODO: This has a bug where if its displayed on the left on mobile it will appear above. Fix somehow. -->
 <!-- Stupidly Case sensitive -->
 {% assign foundPost = site.posts | where_exp: "post", "post.title == include.postTitle" | first %}
 
@@ -15,20 +14,20 @@ imagePosition // "left" or "right"
 <h1>POST NOT FOUND</h1>
 {% endif %}
 
-<div class="columns is-vcentered">
-    <!-- TODO: Get rid of this copy-paste garbage -->
+<div class="columns is-vcentered
     {% if include.imagePosition == "left" %}
+        is-flex-direction-row-tablet
+    {% else %}
+        is-flex-direction-row-reverse-tablet
+    {% endif %}
+">
     <div class="column is-7">
-        <a href="{{ foundPost.url | relative_url }}">
-            <section class="hero is-small-desktop is-medium-mobile my-3 has-background"
-                style="background-image: url({{ foundPost.cover_image | relative_url }});">
-                <div class="hero-body">
-                    <div class="container has-text-centered"></div>
-                </div>
-            </section>
+        <a href="{{ foundPost.url | relative_url }}" class="post-cover">
+            <figure class="image is-37by15 my-3">
+                <img class="is-object-fit-cover" src="{{ foundPost.cover_image | relative_url }}" alt="{{ foundPost.title }} cover">
+            </figure>
         </a>
     </div>
-    {% endif %}
 
     <div class="column has-text-centered">
         <h1 class="is-size-1">
@@ -70,17 +69,4 @@ imagePosition // "left" or "right"
             <button class="button my-2"><a href="{{ foundPost.url | relative_url }}">Read More</a></button>
         </div>
     </div>
-
-    {% if include.imagePosition != "left" %}
-    <div class="column is-7">
-        <a href="{{ foundPost.url | relative_url }}">
-            <section class="hero is-small-desktop is-medium-mobile my-3 has-background"
-                style="background-image: url({{ foundPost.cover_image | relative_url }});">
-                <div class="hero-body">
-                    <div class="container has-text-centered"></div>
-                </div>
-            </section>
-        </a>
-    </div>
-    {% endif %}
 </div>

@@ -4,6 +4,8 @@
 // Bulma Extensions
 @import "bulma-extensions/size-helpers.scss";
 @import "bulma-extensions/hero-helpers.scss";
+@import "bulma-extensions/ratio-helpers.scss";
+@import "bulma-extensions/flex-helper-responsive.scss";
 
 // Helpers
 @import "helpers/font-helper.scss";
@@ -11,5 +13,6 @@
 @import "helpers/secondary-post-helper.scss";
 @import "helpers/about-me-helper.scss";
 @import "helpers/avatar-helper.scss";
+@import "helpers/object-fit-helper.scss";
 
 @import "dropdown-selectable/dropdown-selectable.scss";

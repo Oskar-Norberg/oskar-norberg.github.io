@@ -1,0 +1,14 @@
+.image.is-37by15{
+    aspect-ratio: 37/15;
+}
+
+.image.is-37by15 img,
+.image.is-37by15 .has-ratio {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
