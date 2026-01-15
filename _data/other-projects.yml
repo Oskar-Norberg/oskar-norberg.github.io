@@ -18,7 +18,7 @@
   cover-image: assets/projects/Other/LastFlame.jpg
   description: Worked on "herdable" human AI and cutscene/audio systems, developed reusable Unity Package for setting up behaviour trees.
   itch: https://futuregames.itch.io/the-last-flame
-  github: github.com/Oskar-Norberg/The-Last-Flame-GP2-Code-Only
+  github: https://github.com/Oskar-Norberg/The-Last-Flame-GP2-Code-Only
 
 - title: Lizard Escape
   tag: Unity/C#
