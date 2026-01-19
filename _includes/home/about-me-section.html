@@ -1,4 +1,4 @@
-<div class="columns">
+<div class="columns my-1 py-5">
     <!-- Avatar Image -->
     <div class="column is-flex is-align-items-center is-justify-content-center">
         <figure class="image avatar my-3">
@@ -8,14 +8,14 @@
     </div>
 
     <!-- About me text -->
-    <div class="column has-text-centered">
+    <div class="column">
         <div
-            class="content m-0 p-0 is-flex is-align-items-start is-justify-content-center is-flex-direction-row has-text-centered">
-            <h1 class="is-size-1 m-0 p-0 header-font title">{{ site.data.about.name }}</h1>
+            class="content has-text-centered is-flex is-align-items-start is-justify-content-center is-flex-direction-row has-text-centered mb-0">
+            <h1 class="is-size-1 header-font title mb-0">{{ site.data.about.name }}</h1>
             <p>({{ site.data.about.pronouns }})</p>
         </div>
 
-        <div class="content m-0 p-0">
+        <div class="content has-text-centered">
             <h2 class="is-size-3 subtitle">{{ site.data.about.description }}</h2>
         </div>
 
@@ -23,15 +23,15 @@
             {{ site.data.about.about-me-text | markdownify }}
         </div>
 
-        <div class="content columns has-text-left is-flex is-justify-content-center">
+        <div class="content columns is-mobile has-text-left">
 
             {% for section in site.data.about.about-sections %}
             <div class="column">
 
-                <h2 class="is-size-3 title mb-0">
+                <h2 class="is-size-3 title mb-2">
                     {{ section[0] }}
                 </h2>
-                <ul class="is-size-4 mt-0">
+                <ul class="is-size-4 mt-1">
                     {% for label in section[1] %}
                     <li>{{ label }}</li>
                     {% endfor %}
