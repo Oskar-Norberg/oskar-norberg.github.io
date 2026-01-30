@@ -6,20 +6,6 @@
 #   github
 #   itch
 
-- title: Blood Maiden
-  tag: UE/C++
-  cover-image: assets/projects/Other/BloodMaiden.jpg
-  description: Worked on enemy AI, health and event handling/bus systems.
-  itch: https://futuregames.itch.io/blood-maiden
-  github: https://github.com/Oskar-Norberg/Blood-Maiden-GP3-Code-Only
-
-- title: The Last Flame
-  tag: Unity/C#
-  cover-image: assets/projects/Other/LastFlame.jpg
-  description: Worked on "herdable" human AI and cutscene/audio systems, developed reusable Unity Package for setting up behaviour trees.
-  itch: https://futuregames.itch.io/the-last-flame
-  github: https://github.com/Oskar-Norberg/The-Last-Flame-GP2-Code-Only
-
 - title: Lizard Escape
   tag: Unity/C#
   cover-image: assets/projects/Other/LizardEscape.jpg
@@ -33,6 +19,13 @@
   description: Vampire Surivors Clone developed as part of the C# course at Futuregames.
   itch: https://oskar-norberg.itch.io/vampire-survivors-clone
   github: https://github.com/Oskar-Norberg/Vampire-Survivors-Clone
+
+- title: Blood Maiden
+  tag: UE/C++
+  cover-image: assets/projects/Other/BloodMaiden.jpg
+  description: Worked on enemy AI, health and event handling/bus systems.
+  itch: https://futuregames.itch.io/blood-maiden
+  github: https://github.com/Oskar-Norberg/Blood-Maiden-GP3-Code-Only
 
 - title: Godot Golf
   tag: Godot/GDScript
