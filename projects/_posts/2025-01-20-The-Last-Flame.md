@@ -14,6 +14,8 @@ itch: https://futuregames.itch.io/the-last-flame
 github: https://github.com/Oskar-Norberg/The-Last-Flame-GP2-Code-Only
 
 featured_main: 8
+
+permalink: /projects/TheLastFlame.html
 ---
 
 A project where I truly felt at home in Unity. For this project I worked on AI, Cutscene Management and making an EventBus for modular cross system communication. For the Behaviour Trees and EventBus I eventually set up custom Unity Packages so the code can easily be reused in future projects.

@@ -6,13 +6,15 @@ layout: project
 cover_image: assets/projects/RNGOEngine/RNGOEngine.gif
 main_video: assets/projects/RNGOEngine/Spotlight.mp4
 
-duration: 5 weeks
+duration: Ongoing
 team_size: 1
 tags: ["C++", "OpenGL", "ImGui", "EnTT"]
 
 github: https://github.com/Oskar-Norberg/RNGOEngine-Core
 
 featured_main: 10
+
+permalink: /projects/RNGOEngine.html
 ---
 
 RNGOEngine is a Data Oriented ECS Game Engine developed in C++. The purpose of the project is ultimately to make a generic game engine to use for future projects and to further widen my knowledge of C++ and rendering far beyond something like Unreal Engine. For rendering the engine uses OpenGL, GLFW and ImGui for its editor.
