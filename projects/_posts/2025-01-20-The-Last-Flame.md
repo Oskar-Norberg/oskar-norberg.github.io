@@ -20,7 +20,7 @@ permalink: /projects/TheLastFlame.html
 
 A project where I truly felt at home in Unity. For this project I worked on AI, Cutscene Management and making an EventBus for modular cross system communication. For the Behaviour Trees and EventBus I eventually set up custom Unity Packages so the code can easily be reused in future projects.
 
-# Behaviour Tree
+## Behaviour Tree
 For AI I decided to continue the development of my Behaviour Tree from a previous project. Making improvements to overall structure, modularity and performance of the implementation. The Behaviour Tree as most implementations is built upon a graph structure and its control flow is evaluated left to right using a depth-first search. The tree's flow can be altered using different predicates for the decorators and different sequencing nodes.
 
 The tree’s structure is specified by passing the root node as an argument to the tree's constructor. The tree then constructs a blackboard and sets the blackboard references in all of the child-nodes. The nodes communicate using the BlackBoard structure which stores all entries in a type-erased dictionary, this way all objects can be stored together in one dictionary for simplicity while still being accessible through a string as a key. One potential optimization here would have been to key entries based on their typeid rather than a string. This is quicker than hashing a string, which is essentially a non-determinate number of integers/chars which would lead to multiple hash-calls and hash-combines. Comparatively, [hashing a System.Type](https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/Type.cs,e8937d5bb4bb6af3,references) is far quicker because it has a pre-cached hash given to it at compile-time based on its type. This however was ultimately not implemented as it would’ve made storing multiple entries of the same type impossible. Furthermore BlackBoard accesses never proved to be a significant bottleneck during profiling.
@@ -178,7 +178,7 @@ namespace Ringo.AI
 </div>
 </div>
 
-# EventBus
+## EventBus
 For communication between different systems I opted to implement the EventBus pattern, which I’ve really come to greatly appreciate. EventBuses help alleviate many of the common problems of tight coupling between systems by rather than giving systems direct access to each other they leverage events to give and receive information and commands from other systems. 
 
 To subscribe to an Event any class can create an instance of an ArgumentEventHandler<T> or a NoArgumentEventHandler<T>. The <T> type parameter dictates the type of the Event to listen to. Alongside the type parameter the constructor for the EventHandler also takes in a delegate to call when an event of type <T> is published. Based on whether the class uses the Argument or NonArgumentEventHandler the subscribed delegate can either take the event as a parameter or choose to ignore the data of the event, only using it as a sort of “notification”
@@ -338,9 +338,9 @@ namespace ringo.EventSystem
 </div>
 </div>
 
-# Custom Unity Packages
+## Custom Unity Packages
 In order to be able to reuse these Systems for future projects I also decided to package them up as separate Unity Packages for the [Behaviour Tree](https://github.com/Oskar-Norberg/Unity-BehaviourTree) and [Event Listener](https://github.com/Oskar-Norberg/Unity-EventBus) respectively. While this process was a bit unfamiliar to me, learning about how the Unity Package pipeline works and how to create reusable units was very interesting to me and when I got the hang of it I ended up creating packages for some more of my [projects](https://github.com/Oskar-Norberg/UnityPackages).
 
 
-# Reflection
+## Reflection
 The Last Flame has been an incredible learning opportunity for me, allowing me to truly spread my wings in Unity regarding systems design and applying clean code practices and design patterns. My biggest takeaway from this has definitely been the benefits and importance of modularly designing code in reusable parts rather than a monolith. Having set up the Unity Packages for Behaviour Trees and EventBus which I have used countless times in projects after this one for fast iteration it has been truly one of the best uses of my time and I am looking forward to keep on developing my different [Unity Packages](https://github.com/Oskar-Norberg/UnityPackages).
