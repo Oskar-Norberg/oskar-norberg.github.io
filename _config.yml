@@ -1,7 +1,7 @@
 baseurl: ""
 url: "https://oskarnorberg.dev"
 
-use_simpleanalytics: true
+use_goatcounter: true
 
 markdown: kramdown
 highlighter: rouge

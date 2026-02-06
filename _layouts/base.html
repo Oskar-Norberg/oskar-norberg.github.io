@@ -24,9 +24,8 @@
     <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/base-16-dark/base16.dark.css' | relative_url }}">
 
-    {% if site.use_simpleanalytics %}
-    <!-- Privacy-oriented analytics site, I'm sorry dear visitor. But I need to know... -->
-    <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    {% if jekyll.environment == "production" and site.use_goatcounter %}
+    <script data-goatcounter="https://oskarnorberg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     {% endif %}
 
 </head>
