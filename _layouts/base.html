@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/base-16-dark/base16.dark.css' | relative_url }}">
+
+    {% if site.use_simpleanalytics %}
+    <!-- Privacy-oriented analytics site, I'm sorry dear visitor. But I need to know... -->
+    <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    {% endif %}
+
 </head>
 
 <body class="is-clipped">
