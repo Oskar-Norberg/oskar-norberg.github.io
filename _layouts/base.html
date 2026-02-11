@@ -20,21 +20,24 @@
     <meta property="og:description" content="{{ page.description }}" />
     {% endif %}
 
+    <link href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/base-16-dark/base16.dark.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
-    {% if jekyll.environment == "production" and site.use_goatcounter %}
-    <script data-goatcounter="https://oskarnorberg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    {% endif %}
-
 </head>
 
 <body class="is-clipped">
     {{ content }}
 
+    <script src="{{ '/assets/vendor/aos/aos.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/scroll-button-setup.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/dropdown-selectable.js' | relative_url }}"></script>
+    <script>
+        AOS.init();
+    </script>
+    {% if jekyll.environment == "production" and site.use_goatcounter %}
+    <script data-goatcounter="https://oskarnorberg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    {% endif %}
 </body>
 
 </html>
