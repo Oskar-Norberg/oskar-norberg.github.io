@@ -379,6 +379,7 @@ namespace RNGOEngine::Data
 ```c++
 namespace RNGOEngine::AssetHandling
 {
+    enum class ImportingError
     {
         None,
         FileNotFound,

@@ -1,0 +1,13 @@
+.is-hover-border-solid {
+    border-width: 0.2rem;
+    border-color: #2e333d00;
+    transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.is-hover-border-solid:hover {
+    border-style: solid;
+}
+
+.is-hover-border-color-primary:hover {
+    border-color: #2e333d;
+}

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
-            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
 
             history.replaceState(null, "", `#${targetID}`);
         });
