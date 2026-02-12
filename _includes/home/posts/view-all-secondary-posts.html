@@ -2,7 +2,7 @@
 
 <div class="columns is-multiline" id="other-projects">
     {% for project in posts %}
-    <div class="column is-one-third">
+    <div class="column is-one-third" data-aos="fade-up" data-aos-delay="{{ forloop.index0 | modulo: 3 | plus: 1 | times: 100 }}">
         <section class="hero secondary-post is-small-desktop is-medium-mobile my-3 has-background has-radius-3"
             style="background-image: url('{{ project.cover-image | relative_url }}');">
             <div class="overlay p-3 is-flex is-align-items-end">
