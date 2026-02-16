@@ -9,16 +9,27 @@
 
     <link rel="icon" type="image/x-icon" href="{{ site.data.about.favicon | absolute_url }}">
 
-    <!-- OGP -->
-    <meta property="og:title" content="{{ page.title }} - {{ site.data.about.title }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
-    {% if page.cover_image %}
-    <meta property="og:image" content="{{ page.cover_image | absolute_url }}" />
+    <!-- --- OGP --- -->
+     {% if page.url == "/" %}
+        <meta property="og:title" content="{{ site.data.about.title }}" />
+    {% else %}
+        <meta property="og:title" content="{{ page.title }} - {{ site.data.about.title }}" />
     {% endif %}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+
+    <!-- If it has a main_video, it's probably a project -->
+    {% if page.main_video %}
+    <meta property="og:video" content="{{ page.main_video | absolute_url }}" />
+    <meta property="og:video:type" content="video/mp4" />
+    {% else %}
+    <meta property="og:image" content="{{ site.data.about.profile_picture | absolute_url }}" />
+    {% endif %}
+
     {% if page.description %}
     <meta property="og:description" content="{{ page.description }}" />
     {% endif %}
+    <!-- --- END - OGP --- -->
 
     <link href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
