@@ -3,7 +3,7 @@ description: Engine/Tools-Programmer.
 
 name: Oskar Norberg
 pronouns: he/him
-about-me-text:
+about_me_text:
   I'm **Oskar Norberg**, an **Engine & Tools** programmer from Stockholm, Sweden. 
   My passion lies in creating **tools & software** to aid in content creation. 
   With experience in both **standalone/desktop C++** along with **Unreal Engine** and **Unity** 
@@ -25,8 +25,8 @@ about-sections:
   Libraries: ["EnTT", "OpenGL", "ImGui", "GLFW"]
 
 # Socials
-github-link: https://github.com/Oskar-Norberg
-linkedin-link: https://linkedin.com/in/oskar-norberg-6905b1310
-itch-link: https://oskar-norberg.itch.io
+github_link: https://github.com/Oskar-Norberg
+linkedin_link: https://linkedin.com/in/oskar-norberg-6905b1310
+itch_link: https://oskar-norberg.itch.io
 
-formspree-key: xykgqkdn
+formspree_key: xykgqkdn
