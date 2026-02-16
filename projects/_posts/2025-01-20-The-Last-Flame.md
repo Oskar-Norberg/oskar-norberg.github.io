@@ -3,8 +3,8 @@ title: The Last Flame
 description: The Last Flame is an narrative-driven adventure game set in the arctic of Eryndor. Worked on AI, EventBus and cutscene management, developed reusable Unity Packages.
 layout: project
 
-cover_image: assets/projects/TheLastFlame/LastFlameFox.gif
-main_video: assets/projects/TheLastFlame/LastFlameFox.mp4
+cover_video: assets/projects/TheLastFlame/Fox.mp4
+trailer_video: assets/projects/TheLastFlame/Trailer.webm
 
 duration: 4 weeks
 team_size: 16

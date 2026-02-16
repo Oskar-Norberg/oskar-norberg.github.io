@@ -18,9 +18,9 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
 
-    <!-- If it has a main_video, it's probably a project -->
-    {% if page.main_video %}
-    <meta property="og:video" content="{{ page.main_video | absolute_url }}" />
+    <!-- If it has a cover_video, it's probably a project -->
+    {% if page.cover_video %}
+    <meta property="og:video" content="{{ page.cover_video | absolute_url }}" />
     <meta property="og:video:type" content="video/mp4" />
     {% else %}
     <meta property="og:image" content="{{ site.data.about.profile_picture | absolute_url }}" />
