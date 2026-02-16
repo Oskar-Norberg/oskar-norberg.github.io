@@ -2,10 +2,27 @@ a.post-cover {
     text-decoration: none;
     color: inherit;
     display: block;
+    transition: all 0.3s ease;
+}
+
+.post-cover video,
+.post-cover img {
+    transition: all 0.3s ease;
 }
 
 a.post-cover:hover,
 a.post-cover:focus {
     text-decoration: none;
     color: inherit;
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-6px);
+}
+
+.post-cover:hover h1 {
+    color: var(--bulma-info);
+}
+
+.post-cover:hover video,
+.post-cover:hover img {
+    transform: scale(1.03);
 }
