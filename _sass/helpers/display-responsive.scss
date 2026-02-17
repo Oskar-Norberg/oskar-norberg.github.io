@@ -1,0 +1,8 @@
+.larger-than-mobile{
+    display:none;
+}
+@media screen and (min-width: 768px) {
+    .larger-than-mobile{
+        display:inherit;
+    }
+}
