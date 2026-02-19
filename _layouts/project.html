@@ -41,9 +41,11 @@ layout: default
         </div>
 
         <!-- Consider putting the tags and links in the bottom right? Flexbox with height 100% -->
-        <div class="column">
-            <div class="content">
-                <h2 class="is-size-2 has-text-weight-bold header-font title">{{ page.title }}</h2>
+        <div class="column content">
+            <!-- Project Title -->
+            <h2 class="is-size-2 has-text-weight-bold header-font title">{{ page.title }}</h2>
+            <!-- Team size, Timespan and Date -->
+            <div>
                 <span class="icon-text">
                     <span class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -75,14 +77,17 @@ layout: default
                     </span>
                     <span class="has-text-weight-semibold">{{ page.date | date: "%Y-%m-%d" }}</span>
                 </span>
+            </div>
 
+            <hr>
 
-                <hr>
+            <!-- Summary/Description -->
+            <p>{{ page.description }}</p>
 
-                <p>{{ page.description }}</p>
+            <hr>
 
-                <hr>
-
+            <!-- Github/Itch.io links, project tags -->
+            <div>
                 <div class="has-text-right">
                     {% if page.github %}
                     <span class="icon ">
@@ -120,6 +125,7 @@ layout: default
 
     <hr>
 
+    <!-- Actual Text-->
     <div class="container is-max-desktop">
         <div class="content">
             {{ content }}
