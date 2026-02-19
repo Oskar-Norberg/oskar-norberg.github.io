@@ -4,9 +4,51 @@ layout: default
 
 <div class="container p-4">
     <div class="columns">
-
         <div class="column is-three-fifths">
-            <video width="100%" height="auto" src="{{page.trailer_video | relative_url }}" controls></video>
+            <div class="swiper main-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Lymbo/GasStationQuest.png" | relative_url }}">
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="{{ "assets/projects/Lymbo/ReddneckDialogue.mp4" | relative_url }}"
+                            controls></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Other/GodotGolf.jpg" | relative_url }}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Other/LizardEscape.jpg" | relative_url }}">
+                    </div>
+                                        <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Other/LizardEscape.jpg" | relative_url }}">
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="swiper thumbs-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Lymbo/GasStationQuest.png" | relative_url }}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Lymbo/ReddneckDialogue.mp4" | relative_url }}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Other/GodotGolf.jpg" | relative_url }}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Other/LizardEscape.jpg" | relative_url }}">
+                    </div>
+                                        <div class="swiper-slide">
+                        <img src="{{ "assets/projects/Other/LizardEscape.jpg" | relative_url }}">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Consider putting the tags and links in the bottom right? Flexbox with height 100% -->

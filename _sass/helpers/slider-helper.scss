@@ -1,0 +1,59 @@
+.swiper {
+    text-align: center;
+}
+
+.swiper-wrapper {
+    height: 100%;
+}
+
+.swiper-slide {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide img {
+    display: block;
+
+}
+
+.swiper-slide video {
+    display: block;
+}
+
+.thumbs-swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.thumbs-swiper .swiper-slide {
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+}
+
+.thumbs-swiper img,
+.thumbs-swiper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.thumbs-swiper .swiper-slide-thumb-active img {
+    border-color: var(--bulma-info);
+}
+
+.thumbs-swiper img:hover {
+    filter: brightness(0.75);
+}
+
+.thumbs-swiper .swiper-slide {
+    box-sizing: border-box;
+}
