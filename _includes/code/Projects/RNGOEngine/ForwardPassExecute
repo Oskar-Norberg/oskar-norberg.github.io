@@ -1,0 +1,10 @@
+void ForwardPass::Execute(RenderContext& context)
+{
+    RNGO_ZONE_SCOPED_N("ForwardPass::Execute");
+    m_renderer.EnableFeature(DepthTesting);
+
+    const auto frameBufferID = context.renderPassResources.GetFrameBufferID("Forward Pass");
+    m_renderer.BindFrameBuffer(frameBufferID);
+    ClearAmbientColor(context.drawQueue);
+    RenderOpaque(context.drawQueue);
+}

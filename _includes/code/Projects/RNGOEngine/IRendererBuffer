@@ -1,0 +1,2 @@
+// Takes a span as opposed to passing a vector or other container by reference.
+virtual void BufferVBOData(std::span<const std::byte> data, bool isDynamic) = 0;

@@ -1,0 +1,12 @@
+namespace RNGOEngine::Data
+{
+    enum class ThreadType
+    {
+        None = 0,
+        Main = 1 << 0,
+        Render = 1 << 1,
+        Audio = 1 << 2,
+        Worker = 1 << 3,
+    };
+    DEFINE_ENUM_CLASS_BITWISE_OPERATORS(ThreadType)
+}

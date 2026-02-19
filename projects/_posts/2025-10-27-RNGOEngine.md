@@ -39,66 +39,12 @@ Entities are handled by the Entity Component System implemented using EnTT. Comp
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="Components-Header" markdown="1">
 ```c++
-struct MeshRenderer
-{
-    AssetHandling::AssetHandle ModelHandle;
-    AssetHandling::AssetHandle MaterialKey;
-};
-
-struct Transform
-{
-    glm::vec3 Position = {0.0f, 0.0f, 0.0f};
-    glm::quat Rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
-    glm::vec3 Scale = {1.0f, 1.0f, 1.0f};
-
-    glm::mat4 GetMatrix() const;
-};
-
-struct Camera
-{
-    float FOV = 45.0f;
-    float NearPlane = 0.1f;
-    float FarPlane = 100.0f;
-};
-
-struct LightFalloff
-{
-    // Standard range is 100
-    // https://wiki.ogre3d.org/tiki-index.php?page=-Point+Light+Attenuation
-    float Constant = 1.0f;
-    float Linear = 0.045f;
-    float Quadratic = 0.0075f;
-};
+{% include code/Projects/RNGOEngine/Components.h %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="ISystem-Header" markdown="1">
 ```c++
-template<typename TSystemContext>
-class ISystem
-{
-public:
-    virtual ~ISystem() = default;
-
-    virtual void Initialize(Core::World& world, TSystemContext& context)
-    {
-    }
-
-    virtual void Update(Core::World& world, TSystemContext& context)
-    {
-    }
-
-    virtual void Exit(Core::World& world, TSystemContext& context)
-    {
-    }
-
-    std::string_view GetName() const
-    {
-        return m_debugName;
-    }
-
-protected:
-    std::string_view m_debugName;
-};
+{% include code/Projects/RNGOEngine/ISystem.h %}
 ```
 </div>
 </div>
@@ -121,71 +67,17 @@ Rendering is handled in three stages: RenderSystem, RenderAPI and IRenderer. The
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="RenderSystemUpdate" markdown="1">
 ```c++
-void RenderSystem::Update(RNGOEngine::Core::World& world, EngineSystemContext& context)
-{
-    RNGO_ZONE_SCOPED_N("RenderSystem::Update");
-
-    EngineSystem::Update(world, context);
-
-    RNGOEngine::Core::Renderer::DrawQueue drawQueue;
-    GatherOpaques(world, context, drawQueue);
-
-    GatherCameras(world, context, drawQueue);
-    GatherLights(world, context, drawQueue);
-    GatherBackgroundColors(world, context, drawQueue);
-
-    // Submit draw queue to renderer.
-    context.Renderer->SubmitDrawQueue(std::move(drawQueue));
-}
+{% include code/Projects/RNGOEngine/RenderSystemUpdate %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="RenderPass-Header" markdown="1">
 ```c++
-namespace RNGOEngine::Core::Renderer
-{
-    class RenderPass
-    {
-    public:
-        explicit RenderPass(IRenderer& renderer, const int width, const int height)
-            : m_renderer(renderer), m_width(width), m_height(height)
-        {
-        }
-
-    public:
-        virtual ~RenderPass() = default;
-
-    public:
-        virtual void Execute(RenderContext& context) = 0;
-
-    public:
-        virtual Resources::RenderTargetSpecification GetRenderTargetSpecification() const = 0;
-
-    public:
-        virtual void OnResize(const int width, const int height)
-        {
-            m_width = width;
-            m_height = height;
-        }
-
-    protected:
-        IRenderer& m_renderer;
-        int m_width, m_height;
-    };
-}
+{% include code/Projects/RNGOEngine/RenderPass.h %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="ForwardPassExecute" markdown="1">
 ```c++
-void ForwardPass::Execute(RenderContext& context)
-{
-    RNGO_ZONE_SCOPED_N("ForwardPass::Execute");
-    m_renderer.EnableFeature(DepthTesting);
-
-    const auto frameBufferID = context.renderPassResources.GetFrameBufferID("Forward Pass");
-    m_renderer.BindFrameBuffer(frameBufferID);
-    ClearAmbientColor(context.drawQueue);
-    RenderOpaque(context.drawQueue);
-}
+{% include code/Projects/RNGOEngine/ForwardPassExecute %}
 ```
 </div>
 </div>
@@ -209,112 +101,17 @@ In order to render anything we first need to have a shader, model and texture as
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="UUID-Header" markdown="1">
 ```c++
-// 64-bit wide UUID.
-class UUID
-{
-public:
-    explicit UUID(std::uint64_t value);
-    // NOTE: Default constructs to zero UUID. Make sure this is your intention. Use GenerateUUID() to get a random UUID.
-    UUID();
-
-    ~UUID();
-    UUID(const UUID& other);
-    UUID& operator=(const UUID& other);
-    UUID(UUID&& other) noexcept;
-    UUID& operator=(UUID&& other) noexcept;
-
-    bool operator==(const UUID& other) const;
-
-    std::uint64_t GetValue() const
-    {
-        return m_uuid;
-    }
-
-    explicit constexpr operator uint64_t() const
-    {
-        return m_uuid;
-    }
-
-private:
-    std::uint64_t m_uuid;
-};
+{% include code/Projects/RNGOEngine/UUID.h %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="RuntimeAssetRegistry-Header" markdown="1">
 ```c++
-class RuntimeAssetRegistry : public Utilities::Singleton<RuntimeAssetRegistry>
-    {
-    public:
-        RuntimeAssetRegistry();
-
-        template<Concepts::DerivedFrom<Asset> TAsset>
-        AssetRegistryEntry& Insert(const AssetHandle& handle, TAsset&& asset);
-
-        void Remove(AssetType type, AssetHandle handle);
-
-        AssetState GetState(AssetType type, const AssetHandle& handle) const;
-        void SetState(AssetType type, const AssetHandle& handle, AssetState state);
-
-        template<Concepts::DerivedFrom<Asset> TAsset>
-        std::optional<std::reference_wrapper<TAsset>> TryGet(AssetHandle handle);
-
-        template<Concepts::DerivedFrom<Asset> TAsset>
-        std::optional<std::reference_wrapper<const TAsset>> TryGet(AssetHandle handle) const;
-
-    private:
-        std::tuple<
-            std::monostate,           // Placeholder for None
-            AssetMap<ModelAsset>,     // Models
-            AssetMap<TextureAsset>,   // Textures
-            AssetMap<ShaderAsset>,    // Shaders
-            AssetMap<MaterialAsset>,  // Materials
-            std::monostate            // Placeholder for Count
-        > m_assetStorage;
-    };
+{% include code/Projects/RNGOEngine/RuntimeAssetRegistry.h %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="AssetDatabase-Header" markdown="1">
 ```c++
-class AssetDatabase : public Utilities::Singleton<AssetDatabase>
-    {
-    public:
-        AssetDatabase();
-
-        // Instead of templated functions?
-        // Register / Unregister
-    public:
-        void RegisterAsset(AssetType type, std::unique_ptr<AssetMetadata> metadata);
-
-        void UnregisterAsset(const AssetHandle& uuid);
-
-        // State
-    public:
-        bool IsRegistered(const AssetHandle& handle) const;
-        bool IsRegistered(const std::filesystem::path& path) const;
-        
-        // Unchecked
-        AssetHandle GetAssetHandle(const std::filesystem::path& path) const;
-
-        AssetMetadata& GetAssetMetadata(const AssetHandle& handle);
-
-        const AssetMetadata& GetAssetMetadata(const AssetHandle& handle) const;
-
-        // Checked
-        std::optional<AssetHandle> TryGetAssetHandle(const std::filesystem::path& path) const;
-
-        std::optional<std::reference_wrapper<AssetMetadata>> TryGetAssetMetadata(const AssetHandle& handle);
-
-        std::optional<std::reference_wrapper<const AssetMetadata>> TryGetAssetMetadata(
-            const AssetHandle& handle) const;
-
-    private:
-        std::unordered_map<AssetType, std::unique_ptr<AssetMetadataStorage>> m_metadataStorages;
-        std::unordered_map<AssetHandle, std::pair<AssetType, size_t>> m_handleToStorageIndex;
-        std::unordered_map<std::filesystem::path, AssetHandle> m_pathToHandle;
-
-    private:
-        const AssetMetadata* GetMetadataOrNullptr(const AssetHandle& handle) const;
-    };
+{% include code/Projects/RNGOEngine/AssetDatabase.h %}
 ```
 </div>
 </div>
@@ -330,96 +127,17 @@ Importing assets is done through the AssetLoader and submodule AssetImporters. T
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="Asset-Header" markdown="1">
 ```c++
-class Asset
-    {
-    public:
-        explicit Asset(AssetHandle&& handle)
-            : m_handle(std::move(handle))
-        {
-        }
-
-        virtual ~Asset() = default;
-
-    public:
-        AssetType GetType() const;
-        bool IsType(AssetType type) const;
-
-        // TODO: Unsafe as all hell.
-        template<Concepts::DerivedFrom<Asset> TAsset>
-        TAsset& GetAsType()
-        {
-            return static_cast<TAsset&>(*this);
-        }
-
-        template<Concepts::DerivedFrom<Asset> TAsset>
-        const TAsset& GetAsType() const
-        {
-            return static_cast<const TAsset&>(*this);
-        }
-
-        const AssetHandle& GetHandle() const
-        {
-            return m_handle;
-        }
-
-    public:
-        AssetState GetState() const;
-        bool IsReady() const;
-
-    private:
-        AssetHandle m_handle;
-    };
+{% include code/Projects/RNGOEngine/Asset.h %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="ThreadType-Header" markdown="1">
 ```c++
-namespace RNGOEngine::Data
-{
-    enum class ThreadType
-    {
-        None = 0,
-        Main = 1 << 0,
-        Render = 1 << 1,
-        Audio = 1 << 2,
-        Worker = 1 << 3,
-    };
-    DEFINE_ENUM_CLASS_BITWISE_OPERATORS(ThreadType)
-}
+{% include code/Projects/RNGOEngine/ThreadType.h %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="AssetImporter-Header" markdown="1">
 ```c++
-namespace RNGOEngine::AssetHandling
-{
-    enum class ImportingError
-    {
-        None,
-        FileNotFound,
-        UnsupportedFormat,
-        MalformedFile,
-        UnknownError,
-    };
-
-    class AssetImporter
-    {
-    public:
-        virtual ~AssetImporter() = default;
-
-        virtual ImportingError LoadFromDisk(RuntimeAssetRegistry& registry, const AssetMetadata& metadata) = 0;
-        virtual ImportingError FinalizeLoad(Data::ThreadType threadType, RuntimeAssetRegistry& registry) = 0;
-
-        virtual void Unload(const AssetHandle& handle) = 0;
-
-        virtual std::unique_ptr<AssetMetadata> CreateDefaultMetadata(
-            const std::filesystem::path& path
-        ) const = 0;
-
-    public:
-        virtual std::span<const std::string_view> GetSupportedExtensions() const = 0;
-        virtual Data::ThreadType GetFinalizationThreadTypes() const = 0;
-        virtual AssetType GetAssetType() const = 0;
-    };
-}
+{% include code/Projects/RNGOEngine/AssetImporter.h %}
 ```
 </div>
 </div>
@@ -434,32 +152,12 @@ Throughout the engine I try to apply modern C++ practices wherever possible. The
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="ShaderPreProcessor-Parse" markdown="1">
 ```c++
-struct ShaderParseResult
-{
-    std::string VertexShader;
-    std::string FragmentShader;
-};
-
-enum class ShaderPreProcessingError
-{
-    None,
-    FileNotFound,
-    MalformedInclude,
-    TokenNotFound,
-    
-    MissingVertexStart,
-    MissingFragmentStart,
-    MisorderedShaders
-};
-
-// Returns either the ShaderParseResult (ok) ShaderPreProcessingError (failure)
-std::expected<ShaderParseResult, ShaderPreProcessingError> Parse(const std::filesystem::path& source) const;
+{% include code/Projects/RNGOEngine/ShaderPreProcessorParse %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="IRenderer-Buffer" markdown="1">
 ```c++
-// Takes a span as opposed to passing a vector or other container by reference.
-virtual void BufferVBOData(std::span<const std::byte> data, bool isDynamic) = 0;
+{% include code/Projects/RNGOEngine/IRendererBuffer %}
 ```
 </div>
 </div>

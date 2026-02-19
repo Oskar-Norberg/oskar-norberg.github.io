@@ -55,141 +55,32 @@ The tree’s structure is specified by passing the root node as an argument to t
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="BehaviourTree" markdown="1">
 ```c#
-namespace Ringo.AI
-{
-    public class BehaviourTree
-    {
-        private Node _rootNode;
-        public BlackBoard.BlackBoard BlackBoard { get; }
-
-        public BehaviourTree(Composite rootNode)
-        {
-            BlackBoard = new BlackBoard.BlackBoard();
-        
-            _rootNode = rootNode;
-            _rootNode.PopulateBlackBoard(BlackBoard);
-        }
-
-        public void UpdateTree()
-        {
-            _rootNode.Evaluate();
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/BehaviourTree.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="BlackBoard" markdown="1">
 ```c#
-using System.Collections.Generic;
-
-namespace Ringo.AI.BlackBoard
-{
-    public class BlackBoard
-    {
-        private Dictionary<string, object> data = new Dictionary<string, object>();
-
-        public bool TryGetData(string key, out object value)
-        {
-            return data.TryGetValue(key, out value);
-        }
-
-        public void SetData(string key, object value)
-        {
-            data[key] = value;
-        }
-    }
-}
-
+{% include code/Projects/TheLastFlame/BlackBoard.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="Node" markdown="1">
 ```c#
-namespace Ringo.AI
-{
-    public abstract class Node
-    {
-        protected BlackBoard.BlackBoard BlackBoard;
-        
-        public enum ReturnValue
-        {
-            Success,
-            Failure
-        }
-
-        public abstract ReturnValue Evaluate();
-
-        public virtual void PopulateBlackBoard(BlackBoard.BlackBoard blackBoard)
-        {
-            BlackBoard = blackBoard;
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/Node.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="Leaf" markdown="1">
 ```c#
-namespace Ringo.AI
-{
-    public abstract class Leaf : Node
-    {
-        public abstract override ReturnValue Evaluate();
-    }
-}
+{% include code/Projects/TheLastFlame/Leaf.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="Decorator" markdown="1">
 ```c#
-namespace Ringo.AI
-{
-    public abstract class Decorator : Node
-    {
-        protected Node Child;
-
-        protected Decorator(Node child)
-        {
-            Child = child;
-        }
-
-        public abstract override ReturnValue Evaluate();
-    
-        public override void PopulateBlackBoard(BlackBoard.BlackBoard blackBoard)
-        {
-            base.PopulateBlackBoard(blackBoard);
-        
-            Child.PopulateBlackBoard(blackBoard);
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/Decorator.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="Composite" markdown="1">
 ```c#
-using System.Collections.Generic;
-
-namespace Ringo.AI
-{
-    public abstract class Composite : Node
-    {
-        protected List<Node> Children;
-
-        protected Composite(List<Node> children)
-        {
-            Children = children;
-        }
-
-        public abstract override ReturnValue Evaluate();
-    
-        public override void PopulateBlackBoard(BlackBoard.BlackBoard blackBoard)
-        {
-            base.PopulateBlackBoard(blackBoard);
-        
-            foreach (Node child in Children)
-            {
-                child.PopulateBlackBoard(BlackBoard);
-            }
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/Composite.cs %}
 ```
 </div>
 </div>
@@ -213,143 +104,27 @@ One potential improvement to the EventHandler I have not yet had the time to imp
 <div class="selectable-dropdown-area">
 <div class="selectable-text" data-code-text-name="Event" markdown="1">
 ```c#
-namespace ringo.EventSystem
-{
-    public interface IEvent
-    {
-    }
-}
+{% include code/Projects/TheLastFlame/Event.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="EventBus" markdown="1">
 ```c#
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace ringo.EventSystem
-{
-    public static class EventBus
-    {
-        private static Dictionary<Type, HashSet<IEventHandler>> _handlers = new();
-        
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void InitializeOnLoad()
-        {
-            _handlers = new();
-        }
-        
-        public static void Subscribe<T>(IEventHandler handler) where T : IEvent
-        {
-            if (handler == null)
-            {
-                Debug.LogWarning("[EventBus] Subscribed to null subscriber");
-                return;
-            }
-            
-            if (_handlers.ContainsKey(typeof(T)))
-            {
-                _handlers[typeof(T)].Add(handler);
-                return;
-            }
-
-            var newHandlerList = new HashSet<IEventHandler> { handler };
-            _handlers.Add(typeof(T), newHandlerList);
-        }
-        
-        public static void Unsubscribe<T>(IEventHandler handler) where T : IEvent
-        {
-            if (!_handlers.ContainsKey(typeof(T)))
-            {
-                Debug.LogWarning("[EventBus] Could not find event type to unsubscribe");
-                return;
-            }
-
-            _handlers[typeof(T)].Remove(handler);
-        }
-        
-        public static void Publish<T>(T @event) where T : IEvent
-        {
-            if (!_handlers.ContainsKey(@event.GetType()))
-                return;
-            
-            // Saves a snapshot of handlers to prevent concurrent modification
-            var handlers = new HashSet<IEventHandler>(_handlers[@event.GetType()]);
-
-            foreach (var handler in handlers)
-            {
-                handler.Handle(@event);
-            }
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/EventBus.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="EventHandler" markdown="1">
 ```c#
-namespace ringo.EventSystem
-{
-    public abstract class EventHandler<T> : IEventHandler where T : IEvent
-    {
-        public void Activate()
-        {
-            EventBus.Subscribe<T>(this);
-        }
-        
-        public void Deactivate()
-        {
-            EventBus.Unsubscribe<T>(this);
-        }
-
-        public abstract void Handle(IEvent @event);
-    }
-}
+{% include code/Projects/TheLastFlame/EventHandler.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="ArgumentEventHandler" markdown="1">
 ```c#
-using System;
-
-namespace ringo.EventSystem
-{
-    public class ArgumentEventHandler<T> : EventHandler<T> where T : IEvent
-    {
-        Action<T> _callback;
-        
-        public ArgumentEventHandler(Action<T> callback) : base()
-        {
-            _callback = callback;
-        }
-
-        public override void Handle(IEvent @event)
-        {
-            _callback.Invoke((T) @event);
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/ArgumentEventHandler.cs %}
 ```
 </div>
 <div class="selectable-text" data-code-text-name="NoArgumentEventHandler" markdown="1">
 ```c#
-using System;
-
-namespace ringo.EventSystem
-{
-    public class NoArgumentEventHandler<T> : EventHandler<T> where T : IEvent
-    {
-        Action _callback;
-        
-        public NoArgumentEventHandler(Action callback) : base()
-        {
-            _callback = callback;
-        }
-
-        public override void Handle(IEvent @event)
-        {
-            _callback.Invoke();
-        }
-    }
-}
+{% include code/Projects/TheLastFlame/NoArgumentEventHandler.cs %}
 ```
 </div>
 </div>

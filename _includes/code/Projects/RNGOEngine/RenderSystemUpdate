@@ -1,0 +1,16 @@
+void RenderSystem::Update(RNGOEngine::Core::World& world, EngineSystemContext& context)
+{
+    RNGO_ZONE_SCOPED_N("RenderSystem::Update");
+
+    EngineSystem::Update(world, context);
+
+    RNGOEngine::Core::Renderer::DrawQueue drawQueue;
+    GatherOpaques(world, context, drawQueue);
+
+    GatherCameras(world, context, drawQueue);
+    GatherLights(world, context, drawQueue);
+    GatherBackgroundColors(world, context, drawQueue);
+
+    // Submit draw queue to renderer.
+    context.Renderer->SubmitDrawQueue(std::move(drawQueue));
+}

@@ -1,0 +1,20 @@
+struct ShaderParseResult
+{
+    std::string VertexShader;
+    std::string FragmentShader;
+};
+
+enum class ShaderPreProcessingError
+{
+    None,
+    FileNotFound,
+    MalformedInclude,
+    TokenNotFound,
+    
+    MissingVertexStart,
+    MissingFragmentStart,
+    MisorderedShaders
+};
+
+// Returns either the ShaderParseResult (ok) ShaderPreProcessingError (failure)
+std::expected<ShaderParseResult, ShaderPreProcessingError> Parse(const std::filesystem::path& source) const;
