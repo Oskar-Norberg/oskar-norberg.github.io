@@ -10,6 +10,23 @@ duration: 4 weeks
 team_size: 16
 tags: ["C#", "Unity", "Design Patterns", "Custom Unity Packages"]
 
+gallery:
+  - type: video
+    src: assets/projects/TheLastFlame/Trailer.webm
+    thumb: assets/projects/TheLastFlame/TrailerThumbnail.jpg
+
+  - type: image
+    src: assets/projects/TheLastFlame/HumanPic.jpg
+
+  - type: image
+    src: assets/projects/TheLastFlame/FoxPic.jpg
+
+  - type: image
+    src: assets/projects/TheLastFlame/FoxPic2.jpg
+
+  - type: image
+    src: assets/projects/TheLastFlame/PlayGame.jpg
+
 itch: https://futuregames.itch.io/the-last-flame
 github: https://github.com/Oskar-Norberg/The-Last-Flame-GP2-Code-Only
 

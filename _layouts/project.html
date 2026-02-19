@@ -4,9 +4,40 @@ layout: default
 
 <div class="container p-4">
     <div class="columns">
-
         <div class="column is-three-fifths">
-            <video width="100%" height="auto" src="{{page.trailer_video | relative_url }}" controls></video>
+            <div class="swiper main-swiper">
+                <div class="swiper-wrapper">
+                    {% for item in page.gallery %}
+                    <div class="swiper-slide">
+                        {% if item.type == "video" %}
+                        <video src="{{ item.src | relative_url }}" controls></video>
+                        {% else %}
+                        <img src="{{ item.src | relative_url }}">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+
+            <!-- Thumbnails -->
+            <div class="swiper thumbs-swiper">
+                <div class="swiper-wrapper">
+                    {% for item in page.gallery %}
+                    <div class="swiper-slide">
+                        {% if item.type == "video" %}
+                        <img src="{{ item.thumb | relative_url }}">
+                        {% else %}
+                        <img src="{{ item.src | relative_url }}">
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
 
         <!-- Consider putting the tags and links in the bottom right? Flexbox with height 100% -->
@@ -83,19 +114,6 @@ layout: default
                     {{ tag }}{% unless forloop.last %}, {% endunless %}
                     {% endfor %}
                 </p>
-
-                <!-- TODO: A table of contents would be nice -->
-                <!--
-                    <p class="pl-5 content has-text-right">
-                        <ul>
-                            <li>- Introduction</li>
-                            <li>- Runtime</li>
-                            <li>- Editor</li>
-                            <li>- yada yada</li>
-                            <li>- Reflection</li>
-                        </ul>
-                    </p>
-                    -->
             </div>
         </div>
     </div>

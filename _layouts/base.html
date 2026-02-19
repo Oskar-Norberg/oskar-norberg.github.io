@@ -32,6 +32,7 @@
     <!-- --- END - OGP --- -->
 
     <link href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/vendor/swiperjs/swiper-bundle.min.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/bulma/bulma.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/base-16-dark/base16.dark.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -45,6 +46,7 @@
     {{ content }}
 
     <script src="{{ '/assets/vendor/aos/aos.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/swiperjs/swiper-bundle.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/scroll-button-setup.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/dropdown-selectable.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/bulma/optional/bulma-mobile-navbar.js' | relative_url }}"></script>
@@ -52,6 +54,42 @@
         AOS.init({
             once: true,
         });
+
+        const thumbsSwiper = new Swiper('.thumbs-swiper', {
+            spaceBetween: 0,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true, 
+            loop:false,
+        });
+
+        const swiper = new Swiper('.main-swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+                swiper: thumbsSwiper,
+            },
+            on: {
+                slideChange: function () {
+                    pauseAllVideos();
+                }
+            }
+        });
+
+        function pauseAllVideos() {
+            document.querySelectorAll('.main-swiper video').forEach(video => {
+                video.pause();
+            });
+        }
+
     </script>
 </body>
 

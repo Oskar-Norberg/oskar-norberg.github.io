@@ -12,6 +12,18 @@ tags: ["C++", "OpenGL", "ImGui", "EnTT"]
 
 github: https://github.com/Oskar-Norberg/RNGOEngine-Core
 
+gallery:
+  - type: video
+    src: assets/projects/RNGOEngine/Trailer2.webm
+    thumb: assets/projects/RNGOEngine/Trailer2.jpg
+
+  - type: video
+    src: assets/projects/RNGOEngine/Trailer.webm
+    thumb: assets/projects/RNGOEngine/Trailer.jpg
+
+  - type: image
+    src: assets/projects/RNGOEngine/Scene.png
+
 featured_main: 10
 
 permalink: /projects/RNGOEngine.html
