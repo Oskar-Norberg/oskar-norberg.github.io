@@ -1,0 +1,53 @@
+.other-project {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.other-project .image {
+    width: 100%;
+    height: auto;
+}
+
+.other-project img {
+    width: 100%;
+    height: auto;
+    filter: brightness(1);
+    transition: filter 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.other-project:hover img {
+    filter: brightness(0.4);
+}
+
+.other-project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    pointer-events: none;
+    overflow:hidden;
+}
+
+.other-project-overlay * {
+    overflow:hidden;
+}
+
+.other-project .description {
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.other-project:hover .description {
+    color: rgb(255, 255, 255);
+}
+
+.other-project-overlay .icons {
+    pointer-events: auto;
+    height:auto;
+    margin-top: auto;
+}
+
