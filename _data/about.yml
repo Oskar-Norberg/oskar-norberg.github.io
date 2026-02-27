@@ -18,6 +18,8 @@ about_me_text:
 profile_picture: assets/img/headshot.jpg
 favicon: assets/img/car.jpg
 
+cv: assets/pdf/Oskar_Norberg-CurriculumVitae.pdf
+
 
 about-sections:
   Languages: ["C++", "C#", "Java"]
