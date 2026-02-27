@@ -16,14 +16,14 @@
 - title: Vampire Survivors Clone
   tag: Unity/C#
   cover-image: assets/projects/Other/VampireSurvivors.jpg
-  description: Vampire Surivors Clone developed as part of the C# course at Futuregames.
+  description: Vampire Surivors Clone developed as part of the C# course at Futuregames. Introduction to Unity's component workflow and data-driven development.
   itch: https://oskar-norberg.itch.io/vampire-survivors-clone
   github: https://github.com/Oskar-Norberg/Vampire-Survivors-Clone
 
 - title: Blood Maiden
   tag: UE/C++
   cover-image: assets/projects/Other/BloodMaiden.jpg
-  description: Worked on enemy AI, health and event handling/bus systems.
+  description: Third Game Project at Futuregames and my first larger UE5 project. Worked on enemy AI, health and event handling/bus systems.
   itch: https://futuregames.itch.io/blood-maiden
   github: https://github.com/Oskar-Norberg/Blood-Maiden-GP3-Code-Only
 
