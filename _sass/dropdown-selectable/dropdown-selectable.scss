@@ -5,3 +5,12 @@
 .selectable-text-enabled{
     display:inherit !important;
 }
+
+// Might be the biggest hack in the entire website.
+.selectable-dropdown-button:not(.active)::after {
+  content: "\00a0+";
+}
+
+.selectable-dropdown-button.active::after {
+  content: "\00a0-";
+}

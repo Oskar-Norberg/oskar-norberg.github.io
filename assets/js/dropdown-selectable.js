@@ -8,6 +8,9 @@ const dropdownTextNameAttribute = "data-code-text-name";
 const dropdownTextClassName = "selectable-text";
 const dropdownTextEnabledClassName = "selectable-text-enabled";
 
+const dropdownButtonActiveClass = "active";
+const dropdownButtonDisabledClass = "disabled";
+
 document.addEventListener("DOMContentLoaded", () => {
     const selectables = document.querySelectorAll(`.${dropdownHeadClassName}`);
 
@@ -50,23 +53,27 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
 
                         const textToOpen = selectableTexts[attributeToOpen];
+                        const isActive = textToOpen.classList.contains(dropdownTextEnabledClassName);
 
-                        // If you try to enable the currently selected one, disable all.
-                        if (textToOpen.classList.contains(dropdownTextEnabledClassName)) {
-                            // Disable all
-                            for (const key in selectableTexts) {
-                                selectableTexts[key].classList.remove(dropdownTextEnabledClassName);
-                            }
-                        } else {
-                            // Disable all
-                            for (const key in selectableTexts) {
-                                selectableTexts[key].classList.remove(dropdownTextEnabledClassName);
-                            }
+                        // Disable all texts
+                        for (const key in selectableTexts) {
+                            selectableTexts[key].classList.remove(dropdownTextEnabledClassName);
+                        }
 
-                            // Toggle active
-                            const text = selectableTexts[attributeToOpen];
+                        // Reset all buttons
+                        for (const btn of selectable.querySelectorAll(`[${dropdownButtonNameAttribute}]`)) {
+                            btn.classList.remove(dropdownButtonActiveClass);
+                            btn.classList.remove(dropdownButtonDisabledClass);
+                            btn.classList.add(dropdownButtonDisabledClass);
+                        }
 
-                            text.classList.add(dropdownTextEnabledClassName);
+                        if (!isActive) {
+                            // Enable text
+                            textToOpen.classList.add(dropdownTextEnabledClassName);
+
+                            // Set active button
+                            child.classList.remove(dropdownButtonDisabledClass);
+                            child.classList.add(dropdownButtonActiveClass);
                         }
                     });
                 }
