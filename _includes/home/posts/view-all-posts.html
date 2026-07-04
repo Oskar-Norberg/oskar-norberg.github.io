@@ -14,5 +14,9 @@
     {% endif %}
 
     {% include project_view.html postTitle = post_name imagePosition = imgPos %}
-    <hr>
+
+    {% if forloop.last == true %}
+    {% else %}
+            <hr>
+    {% endif %}
 {% endfor %}
