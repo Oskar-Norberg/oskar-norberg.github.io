@@ -3,8 +3,10 @@ title: RNGOEngine
 description: RNGOEngine is a C++ game engine runtime and editor with ECS, custom made OpenGL RHI Wrapper and RenderPass system.
 layout: project
 
-cover_video: assets/projects/RNGOEngine/Trailer.webm
-trailer_video: assets/projects/RNGOEngine/Trailer.webm
+cover_video:
+  - src:
+      webm: assets/projects/RNGOEngine/Trailer.webm
+      mp4: assets/projects/RNGOEngine/Trailer.mp4
 
 duration: Ongoing
 team_size: 1
@@ -14,7 +16,9 @@ github: https://github.com/Oskar-Norberg/RNGOEngine-Core
 
 gallery:
   - type: video
-    src: assets/projects/RNGOEngine/Trailer2.webm
+    src:
+      webm: assets/projects/RNGOEngine/Trailer2.webm
+      mp4: assets/projects/RNGOEngine/Trailer2.mp4
     thumb: assets/projects/RNGOEngine/Trailer2.jpg
 
   - type: video

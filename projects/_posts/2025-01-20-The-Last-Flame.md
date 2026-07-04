@@ -3,8 +3,10 @@ title: The Last Flame
 description: The Last Flame is an narrative-driven adventure game set in the arctic of Eryndor. Worked on AI, EventBus and cutscene management, developed reusable Unity Packages.
 layout: project
 
-cover_video: assets/projects/TheLastFlame/Fox.mp4
-trailer_video: assets/projects/TheLastFlame/Trailer.webm
+cover_video:
+  - src:
+      webm: assets/projects/TheLastFlame/Fox.webm
+      mp4: assets/projects/TheLastFlame/Fox.mp4
 
 duration: 4 weeks
 team_size: 16
@@ -12,7 +14,9 @@ tags: ["C#", "Unity", "Design Patterns", "Custom Unity Packages"]
 
 gallery:
   - type: video
-    src: assets/projects/TheLastFlame/Trailer.webm
+    src:
+      webm: assets/projects/TheLastFlame/Trailer.webm
+      mp4: assets/projects/TheLastFlame/Trailer.mp4
     thumb: assets/projects/TheLastFlame/TrailerThumbnail.jpg
 
   - type: image

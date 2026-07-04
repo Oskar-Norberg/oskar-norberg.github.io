@@ -10,7 +10,16 @@ layout: default
                     {% for item in page.gallery %}
                     <div class="swiper-slide">
                         {% if item.type == "video" %}
-                        <video src="{{ item.src | relative_url }}" controls></video>
+                        <video controls>
+                            {% if item.src.webm %}
+                                <source src="{{ item.src.webm | relative_url }}" type="video/webm">
+                            {% endif %}
+                            {% if item.src.mp4 %}
+                                <source src="{{ item.src.mp4 | relative_url }}" type="video/mp4">
+                            {% else %}
+                            <source src="MISSING_VIDEO_ERROR" type="video/mp4">
+                            {% endif %}
+                        </video>
                         {% else %}
                         <img src="{{ item.src | relative_url }}">
                         {% endif %}
