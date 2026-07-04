@@ -1,13 +1,13 @@
 title: Oskar Norberg - Portfolio
-description: Engine/Tools-Programmer.
+description: Game Programmer Generalist.
 
 name: Oskar Norberg
 pronouns: he/him
 about_me_text:
-  I'm **Oskar Norberg**, an **Engine & Tools** programmer from Stockholm, Sweden. 
+  I'm **Oskar Norberg**, a **Game Programmer** from Stockholm, Sweden. 
   My passion lies in creating **tools & software** to aid in content creation. 
-  With experience in both **standalone/desktop C++** along with **Unreal Engine** and **Unity** 
-  I'm interested in **rendering**, **performance** and **architecting** competent systems with **modularity** and **scalability**.
+  With experience in both **standalone/desktop C++** along with **Unreal Engine C++** and **.NET** with **Unity**.
+  I'm interested in **custom tooling**, **performance** and **architecting** competent systems with **modularity** and **scalability** through modern software engineering.
 
 
   Outside of programming I also enjoy **photography**, **movies** and **music**. 
@@ -23,8 +23,8 @@ cv: assets/pdf/Oskar_Norberg-CurriculumVitae.pdf
 
 about-sections:
   Languages: ["C++", "C#", "Java"]
-  Software: ["CMake", "Unreal Engine", "Unity", "Godot", "Perforce + Git"]
-  Libraries: ["EnTT", "OpenGL", "ImGui", "GLFW"]
+  Software: ["CMake", "Unity", "Unreal Engine", "Godot", "Perforce + Git"]
+  Libraries: ["VContainer", "DOTween", "EnTT", "OpenGL", "ImGui"]
 
 # Socials
 github_link: https://github.com/Oskar-Norberg

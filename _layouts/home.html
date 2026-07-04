@@ -15,15 +15,20 @@ layout: default
 </div>
 
 <!-- Experience -->
-<div class="content mt-0 pt-0" id="experience" data-aos="fade-up">
+<div class="content my-0 py-0" id="experience" data-aos="fade-up">
     <div class="container px-4">
         {% include home/experience.html %}
     </div>
 </div>
 
-<!-- Other Projects -->
-<div>
-    <div class="container px-4">
-        {% include home/posts/view-all-secondary-posts.html %}
+<!-- Other Projects Divider -->
+<div class="has-background-dark content py-4 my-0" data-aos="fade-up" id="selected-work">
+    <div class="container px-4 has-text-centered">
+        <h1 class="text-white header-font is-size-1">Selected Work</h1>
     </div>
+</div>
+
+<!-- Other Projects -->
+<div class="container p-4">
+    {% include home/posts/view-all-secondary-posts.html %}
 </div>

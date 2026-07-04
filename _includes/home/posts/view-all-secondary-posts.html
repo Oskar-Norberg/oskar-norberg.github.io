@@ -1,6 +1,6 @@
 {% assign posts = site.data.other-projects %}
 
-<div class="columns is-multiline" id="other-projects">
+<div class="columns is-multiline">
     {% for project in posts %}
     <div class="column is-one-third mb-0 other-project" data-aos="fade-up"
         data-aos-delay="{{ forloop.index0 | modulo: 3 | plus: 1 | times: 100 }}">
