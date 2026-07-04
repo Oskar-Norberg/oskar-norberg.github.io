@@ -1,19 +1,19 @@
 .larger-than-mobile {
-    display: none;
+    display: none !important;
 }
 
 @media screen and (min-width: 768px) {
     .larger-than-mobile {
-        display: inherit;
+        display: inherit !important;
     }
 }
 
 .larger-than-tablet {
-    display: none;
+    display: none !important;
 }
 
 @media screen and (min-width: 1024px) {
     .larger-than-tablet {
-        display: inherit;
+        display: inherit !important;
     }
 }

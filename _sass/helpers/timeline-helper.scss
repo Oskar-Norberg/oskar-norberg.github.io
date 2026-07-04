@@ -1,0 +1,28 @@
+.timeline-column {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+}
+
+.timeline-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    background: hsl(var(--bulma-dark-h), var(--bulma-dark-s), var(--bulma-dark-l));
+}
+
+.timeline-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: hsl(var(--bulma-dark-h), var(--bulma-dark-s), var(--bulma-dark-l));
+}

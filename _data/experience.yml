@@ -1,0 +1,45 @@
+# title
+#   place
+#   start
+#   end
+#   description
+#   skills
+
+# These will appear sequentially
+
+- title: Graduation Project
+  place: Evergreen IT AB
+  start: idk
+  end: idk
+  description:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Etiam eu diam volutpat, iaculis orci non, porttitor metus. 
+    Aliquam fringilla erat tortor. 
+    Vivamus commodo non massa ut lobortis. 
+    Phasellus a justo non magna faucibus tincidunt. 
+    Suspendisse ut ultrices odio. 
+    Mauris eu dictum libero. 
+  skills:
+    - C++
+    - Custom Engine
+    - Tool Development
+    - UI
+
+- title: Internship
+  place: MAG Interactive
+  start: 18/5-26
+  end: 25/12-26
+  description:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Etiam eu diam volutpat, iaculis orci non, porttitor metus. 
+    Aliquam fringilla erat tortor. 
+    Vivamus commodo non massa ut lobortis. 
+    Phasellus a justo non magna faucibus tincidunt. 
+    Suspendisse ut ultrices odio. 
+    Mauris eu dictum libero. 
+  skills:
+    - C#
+    - Unity
+    - System Architecture
+    - Mobile Development
+
