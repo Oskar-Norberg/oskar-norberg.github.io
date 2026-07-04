@@ -5,7 +5,6 @@ layout: project
 
 cover_video:
   - src:
-      webm: assets/projects/TheLastFlame/Fox.webm
       mp4: assets/projects/TheLastFlame/Fox.mp4
 
 duration: 4 weeks
