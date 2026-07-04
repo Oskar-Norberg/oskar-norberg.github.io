@@ -9,6 +9,8 @@
 .other-project .image {
     width: 100%;
     height: auto;
+
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0.04) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(0, 0, 0, 0.15) 100%);
 }
 
 .other-project img {
@@ -26,14 +28,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     pointer-events: none;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .other-project-overlay * {
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .other-project .description {
@@ -47,7 +49,6 @@
 
 .other-project-overlay .icons {
     pointer-events: auto;
-    height:auto;
+    height: auto;
     margin-top: auto;
 }
-
