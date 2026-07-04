@@ -1,0 +1,64 @@
+{% assign experiences = site.data.experience %}
+
+<div class="timeline-column columns is-vcentered my-0 pt-4">
+    <div class="column is-5"></div>
+    <div class="column is-2">
+        <div class="timeline-bar"></div>
+    </div>
+    <div class="column is-5"></div>
+</div>
+
+{% for experience in experiences %}
+
+{% assign side = forloop.index0 | modulo: 2 %}
+
+<div class="columns is-vcentered m-0
+    {% if side == 0 %}
+        is-flex-direction-row-tablet
+    {% else %}
+        is-flex-direction-row-reverse-tablet
+    {% endif %}">
+
+    <div class="column has-background-dark is-5 p-5 has-radius-1"
+    {% if side == 0 %}
+        data-aos="fade-right"
+    {% else %}
+        data-aos="fade-left"
+    {% endif %}
+    data-aos-delay="{{ forloop.index0 | modulo: 3 | plus: 1 | times: 50 }}"
+    >
+        <div class="experience-card">
+            <h3 class="title is-4">{{ experience.title }}</h3>
+            <!-- TODO: Text weight changes? -->
+            <p class="subtitle is-6 mb-0">{{ experience.place }}</p>
+            <p class="subtitle is-6 mt-0">{{ experience.start }} - {{ experience.end }}</p>
+
+            <p>{{ experience.description }}</p>
+
+            {% if experience.skills %}
+            <div class="tags">
+                {% for skill in experience.skills %}
+                <span class="tag">{{ skill }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="column is-2 timeline-column">
+        <div class="timeline-bar"></div>
+        <div class="timeline-circle larger-than-mobile"></div>
+    </div>
+
+    <div class="column is-5 p-0 m-0"></div>
+</div>
+
+{% endfor %}
+
+<div class="timeline-column columns is-vcentered my-0 pt-2">
+    <div class="column is-5"></div>
+    <div class="column is-2">
+        <div class="timeline-bar"></div>
+    </div>
+    <div class="column is-5"></div>
+</div>

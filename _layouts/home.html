@@ -3,20 +3,32 @@ layout: default
 ---
 
 <!-- Main Projects -->
-<div class="container px-4 pb-4" data-aos="fade-up">
+<div class="container px-4 pb-4 mb-4" data-aos="fade-up">
     {% include home/posts/view-all-posts.html %}
 </div>
 
 <!-- About Me -->
-<div class="has-background-dark content" id="about-me" data-aos="fade-up">
+<div class="has-background-dark content mb-0 pb-0" id="about-me" data-aos="fade-up">
     <div class="container px-4">
         {% include home/about-me-section.html %}
     </div>
 </div>
 
-<!-- Other Projects -->
-<div>
+<!-- Experience -->
+<div class="content my-0 py-0" id="experience">
     <div class="container px-4">
-        {% include home/posts/view-all-secondary-posts.html %}
+        {% include home/experience.html %}
     </div>
+</div>
+
+<!-- Other Projects Divider -->
+<div class="has-background-dark content py-4 my-0" id="selected-work">
+    <div class="container px-4 has-text-centered">
+        <h1 class="text-white header-font is-size-1 my-2">Selected Work</h1>
+    </div>
+</div>
+
+<!-- Other Projects -->
+<div class="container p-4 pt-5">
+    {% include home/posts/view-all-secondary-posts.html %}
 </div>

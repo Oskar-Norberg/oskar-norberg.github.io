@@ -6,6 +6,12 @@
 #   github
 #   itch
 
+- title: Animation Editor for Iterum
+  tag: Custom Engine/C++
+  cover-image: assets/projects/Other/IterumAnimEditor.jpg
+  description:  As part of my graduation project at Futuregames, I worked with Evergreen IT making an Animation Editor for Iterum. I also wrote a blog-post about it.
+  website: https://iterum.gg/crafting-iterums-animation-editor/
+
 - title: Lizard Escape
   tag: Unity/C#
   cover-image: assets/projects/Other/LizardEscape.jpg
