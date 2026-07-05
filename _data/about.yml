@@ -24,7 +24,7 @@ cv: assets/pdf/Oskar_Norberg-CurriculumVitae.pdf
 about-sections:
   Languages: ["C++", "C#", "Java"]
   Software: ["CMake", "Unity", "Unreal Engine", "Godot", "Perforce + Git"]
-  Libraries: ["VContainer", "DOTween", "EnTT", "OpenGL", "ImGui"]
+  Libraries: ["VContainer", "UniTask", "EnTT", "OpenGL", "ImGui"]
 
 # Socials
 github_link: https://github.com/Oskar-Norberg
