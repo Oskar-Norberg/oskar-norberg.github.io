@@ -1,0 +1,28 @@
+.is-grow-on-hover{
+    transform: rotate(0);
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.is-grow-on-hover:hover.grow-1{
+    transform: scale(1.01);
+}
+
+.is-grow-on-hover:hover.grow-2{
+    transform: scale(1.02);
+}
+
+.is-grow-on-hover:hover.grow-3{
+    transform: scale(1.03);
+}
+
+.is-grow-on-hover:hover.grow-4{
+    transform: scale(1.04);
+}
+
+.is-grow-on-hover:hover.grow-5{
+    transform: scale(1.05);
+}
+
+.is-grow-on-hover:hover.grow-6{
+    transform: scale(1.06);
+}
