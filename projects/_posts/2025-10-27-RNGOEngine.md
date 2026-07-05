@@ -60,7 +60,7 @@ Entities are handled by the Entity Component System implemented using EnTT. Comp
 Rendering is handled in three stages: RenderSystem, RenderAPI and IRenderer. The RenderSystem collects all MeshRenderers, Lighting and Camera information and submits draw calls. The RenderAPI is a higher-level abstraction on top of the RenderAPI and handles higher-level concepts of FrameTargets and RenderPasses. RenderPasses have virtual functions for their execution and are passed a reference to the IRenderer to separate the logic for things such as ShadowPass and ForwardPass. Currently the Engine only supports Forward Rendering with Shadow Mapping, but a deferred pipeline is planned. One of the philosophies behind this design is to keep a specific graphics API limited only to the lower-level IRenderer and to never have direct OpenGL calls anywhere outside of that class. 
 </div>
 <div class="column">
-<video width="100%" height="auto" src="{{ "assets/projects/RNGOEngine/Spotlight.mp4" | relative_url }}" controls></video>
+<video width="100%" height="auto" src="{{ "assets/projects/RNGOEngine/Spotlight.mp4" | relative_url }}" controls playsinline></video>
 </div>
 </div>
 

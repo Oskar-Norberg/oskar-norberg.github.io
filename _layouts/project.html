@@ -10,7 +10,7 @@ layout: default
                     {% for item in page.gallery %}
                     <div class="swiper-slide">
                         {% if item.type == "video" %}
-                        <video controls>
+                        <video controls playsinline>
                             {% if item.src.webm %}
                                 <source src="{{ item.src.webm | relative_url }}" type="video/webm">
                             {% endif %}

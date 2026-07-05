@@ -45,7 +45,7 @@ For AI I decided to continue the development of my Behaviour Tree from a previou
 
 The tree’s structure is specified by passing the root node as an argument to the tree's constructor. The tree then constructs a blackboard and sets the blackboard references in all of the child-nodes. The nodes communicate using the BlackBoard structure which stores all entries in a type-erased dictionary, this way all objects can be stored together in one dictionary for simplicity while still being accessible through a string as a key. One potential optimization here would have been to key entries based on their typeid rather than a string. This is quicker than hashing a string, which is essentially a non-determinate number of integers/chars which would lead to multiple hash-calls and hash-combines. Comparatively, [hashing a System.Type](https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/Type.cs,e8937d5bb4bb6af3,references) is far quicker because it has a pre-cached hash given to it at compile-time based on its type. This however was ultimately not implemented as it would’ve made storing multiple entries of the same type impossible. Furthermore BlackBoard accesses never proved to be a significant bottleneck during profiling.
 
-<video width="60%" height="auto" src="{{ "assets/projects/TheLastFlame/HumanTracking.mp4" | relative_url }}" controls></video>
+<video width="60%" height="auto" src="{{ "assets/projects/TheLastFlame/HumanTracking.mp4" | relative_url }}" controls playsinline></video>
 *Human tracking and avoiding staying too close to the player.*
 
 <div class="selectable-dropdown">
