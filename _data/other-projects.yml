@@ -15,7 +15,7 @@
 - title: Lizard Escape
   tag: Unity/C#
   cover-image: assets/projects/Other/LizardEscape.jpg
-  description: First Game Project at Futuregames. Worked on player input, custom A* pathfinding and lizard destruction system.
+  description: First Game Project at Futuregames. Worked on player input, custom A* pathfinding, and obstacle destruction system.
   itch: https://futuregames.itch.io/lizardescape
   github: https://github.com/Oskar-Norberg/Lizard-Escape-GP1-Code-Only
 
@@ -29,7 +29,7 @@
 - title: Blood Maiden
   tag: UE/C++
   cover-image: assets/projects/Other/BloodMaiden.jpg
-  description: Third Game Project at Futuregames and my first larger UE5 project. Worked on enemy AI, health and event handling/bus systems.
+  description: Third Game Project at Futuregames and my first larger UE5 project. Worked on enemy AI, health, and event handling/bus systems.
   itch: https://futuregames.itch.io/blood-maiden
   github: https://github.com/Oskar-Norberg/Blood-Maiden-GP3-Code-Only
 
