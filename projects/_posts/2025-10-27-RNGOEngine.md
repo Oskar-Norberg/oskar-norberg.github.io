@@ -8,7 +8,7 @@ cover_video:
       webm: assets/projects/RNGOEngine/Trailer.webm
       mp4: assets/projects/RNGOEngine/Trailer.mp4
 
-duration: Ongoing
+duration: 4 Months
 team_size: 1
 tags: ["C++", "OpenGL", "ImGui", "EnTT"]
 
@@ -22,7 +22,9 @@ gallery:
     thumb: assets/projects/RNGOEngine/Trailer2.jpg
 
   - type: video
-    src: assets/projects/RNGOEngine/Trailer.webm
+    src: 
+      webm: assets/projects/RNGOEngine/Trailer.webm
+      mp4: assets/projects/RNGOEngine/Trailer.mp4
     thumb: assets/projects/RNGOEngine/Trailer.jpg
 
   - type: image
