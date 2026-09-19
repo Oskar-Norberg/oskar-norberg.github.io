@@ -7,6 +7,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo/Cairo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 // Kanit
 @font-face {
   font-family: 'Kanit';
@@ -21,6 +29,14 @@
   src: url('../fonts/Kanit/Kanit-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('../fonts/Kanit/Kanit-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
