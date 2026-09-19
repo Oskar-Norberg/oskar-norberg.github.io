@@ -22,7 +22,7 @@
     <div class="column is-5" {% if side==0 %} data-aos="fade-right" {% else %} data-aos="fade-left" {% endif %}
         data-aos-delay="{{ forloop.index0 | modulo: 3 | plus: 1 | times: 50 }}">
         <div class="is-grow-on-hover grow-2">
-            <div class="is-rotate-on-hover rotate-left has-background-dark has-radius-1 p-5">
+            <div class="is-rotate-on-hover rotate-left has-background-dark has-radius-1 p-5 has-box-shadow">
                 <div class="experience-card">
                     <h3 class="title is-4">{{ experience.title }}</h3>
                     <!-- TODO: Text weight changes? -->
