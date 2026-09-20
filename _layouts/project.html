@@ -4,8 +4,9 @@ layout: default
 
 <div class="container p-4">
     <div class="columns">
-        <div class="column is-three-fifths">
-            <div class="swiper main-swiper">
+        <!-- Left Pane -->
+        <div class="column is-three-fifths" data-aos="fade-right">
+            <div class="swiper main-swiper has-box-shadow">
                 <div class="swiper-wrapper">
                     {% for item in page.gallery %}
                     <div class="swiper-slide">
@@ -50,7 +51,8 @@ layout: default
         </div>
 
         <!-- Consider putting the tags and links in the bottom right? Flexbox with height 100% -->
-        <div class="column content">
+        <!-- Right Pane -->
+        <div class="column content" data-aos="fade-left">
             <!-- Project Title -->
             <h2 class="is-size-2 has-text-weight-bold header-font title">{{ page.title }}</h2>
             <!-- Team size, Timespan and Date -->
@@ -96,7 +98,7 @@ layout: default
             <hr>
 
             <!-- Github/Itch.io links, project tags -->
-            <div>
+            <div class="has-background-dark has-radius-1 has-box-shadow p-4">
                 <div class="has-text-right">
                     {% if page.github %}
                     <span class="icon ">
